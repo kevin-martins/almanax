@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { AlmanaxQuery } from '../../models/query'
 
 export const apiSlice = createApi({
@@ -11,10 +11,10 @@ export const apiSlice = createApi({
         //     return headers
         // }
     }),
-    endpoints(builder) {
+    endpoints(builder: any) {
         return {
-            fetchAlmanax: builder.query<{ data: [] }, AlmanaxQuery>({
-                query({ languageSelected, days }) {
+            fetchAlmanax: builder.query({
+                query({ languageSelected, days }: AlmanaxQuery) {
                     return `${languageSelected}/ahead/${days}`
                 }
             })

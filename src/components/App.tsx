@@ -10,7 +10,7 @@ import Table from "./Table/Table";
 export const App = () => {
   const languageSelected = useAppSelector(state => state.almanax.language)
   const days = useAppSelector(state => state.almanax.days)
-  const { data = { data: [] }, isFetching } = useFetchAlmanaxQuery({ languageSelected, days })
+  const { data = {}, isFetching } = useFetchAlmanaxQuery({ languageSelected, days })
   const dispatch = useAppDispatch()
 
   useEffect(() => {
