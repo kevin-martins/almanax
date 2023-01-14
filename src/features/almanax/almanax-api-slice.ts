@@ -11,10 +11,10 @@ export const apiSlice = createApi({
         //     return headers
         // }
     }),
-    endpoints(builder: any) {
+    endpoints(builder) {
         return {
-            fetchAlmanax: builder.query({
-                query({ languageSelected, days }: AlmanaxQuery) {
+            fetchAlmanax: builder.query<{ data: { data: [] } }, AlmanaxQuery>({
+                query({ languageSelected, days }) {
                     return `${languageSelected}/ahead/${days}`
                 }
             })
