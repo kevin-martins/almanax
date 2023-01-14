@@ -21,7 +21,7 @@ export const App = () => {
           date: el.date,
           name: el.item_name,
           quantity: el.item_quantity,
-          url: el.item_url,
+          url: el.item.image_url,
         }
       })
       dispatch(createArray(newData))
