@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { DataProps } from '../models/data'
+import { FilterSearch, FilterProps } from '../models/filter'
 import { language } from '../models/language'
 
 interface Almanax {
     language: string,
     days: number,
     array: DataProps[],
-    bonus: string[],
+    filter: FilterSearch,
 }
 
 const initialState: Almanax = {
-    language: language.En,
+    language: language.Fr,
     days: 20,
     array: [],
-    bonus: [],
+    filter: FilterSearch.None
 }
 
 const almanaxSlice = createSlice({
@@ -29,6 +30,9 @@ const almanaxSlice = createSlice({
         createArray(state, action: PayloadAction<DataProps[]>) {
             state.array = action.payload
         },
+        setFilter(state, action: PayloadAction<FilterSearch>) {
+            state.filter = action.payload
+        },
     }
 })
 
@@ -36,5 +40,6 @@ export const {
     setLanguage,
     setDays,
     createArray,
+    setFilter,
 } = almanaxSlice.actions
 export default almanaxSlice.reducer

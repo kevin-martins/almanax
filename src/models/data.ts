@@ -1,7 +1,10 @@
+import { FilterSearch } from "./filter"
+
 export type DataProps = {
     bonus: string,
     date: string,
     name: string,
     quantity: number,
-    url: string,
+    icon: string,
+    filterSearch: FilterSearch,
 }
