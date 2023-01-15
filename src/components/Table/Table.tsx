@@ -3,6 +3,7 @@ import { DataProps } from '../../models/data'
 import { language } from '../../models/language'
 import { TableHead } from '../../models/table'
 import Head from './Head'
+import Cell from './Cell'
 
 export const Table = (): JSX.Element => {
   const currentLanguage = useAppSelector(state => state.almanax.language)
@@ -26,25 +27,8 @@ export const Table = (): JSX.Element => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row: DataProps, i: number) => (
-            <tr
-              key={i + Date.now()}
-              className={`${i !== data.length - 1 && 'border-b-[.5px] border-white/20'} text-center text-white hover:bg-white/20 h-full`}
-            >
-              <td>
-                {row.date}
-              </td>
-              <td>
-                <div className='flex'>
-                  <img src={row.url} alt={row.name} className='w-10 h-10 my-auto' />
-                  <p className='mx-auto'>{row.name}</p>
-                </div>
-              </td>
-              <td>
-                {row.quantity}
-              </td>
-              <td>{row.bonus}</td>
-            </tr>
+          {data.map((cell: DataProps, i: number) => (
+            <Cell key={i + Date.now()} cell={cell} dataLength={data.length} index={i} />
           ))}
         </tbody>
       </table>
