@@ -4,10 +4,9 @@ import { AlmanaxQuery } from '../../models/query'
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        // https://alm.dofusdu.de/dofus/en/ahead/1
         baseUrl: 'https://alm.dofusdu.de/dofus/',
         // prepareHeaders(headers) {
-        //     headers.set('x-api-key', "3OWuTUoCOIKPSXixNdjAHQ==0QPsbU4mdPMtdc3X")
+        //     headers.set('x-api-key', "")
         //     return headers
         // }
     }),
