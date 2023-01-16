@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { DataProps } from '../models/data'
-import { FilterSearch, FilterProps } from '../models/filter'
+import { FilterSearch } from '../models/filter'
 import { language } from '../models/language'
 
 interface Almanax {
@@ -12,7 +12,7 @@ interface Almanax {
 
 const initialState: Almanax = {
     language: language.Fr,
-    days: 20,
+    days: 40,
     array: [],
     filter: FilterSearch.None
 }
