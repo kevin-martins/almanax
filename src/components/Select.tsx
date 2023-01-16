@@ -21,7 +21,11 @@ type Props = {
 export const Select = ({ currentValue, options, onChange }: Props) => {
   const language = useAppSelector(state => state.almanax.language)
   return (
-    <select value={currentValue} onChange={onChange}>
+    <select
+      value={currentValue}
+      onChange={onChange}
+      className="outline-none bg-gray-800 shadow-2xl text-yellow-500 p-2 text-lg mt-5"
+    >
       {options.map((option: Option, i: number) => (
         <option
           key={i + Date.now()}
