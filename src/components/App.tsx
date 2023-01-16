@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { filterOptions, languageOptions } from "../api/select";
+import { filterOptions } from "../api/select";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { createArray, setFilter, setLanguage } from "../features/almanax-slice";
 import { useFetchAlmanaxQuery } from "../features/almanax/almanax-api-slice";
@@ -33,7 +33,7 @@ export const App = () => {
   }, [isFetching])
 
   return (
-    <div className="bg-gray-800">
+    <div className={`${filterSelected !== FilterSearch.None && 'h-screen'} bg-gray-800`}>
       {/* <Select
         currentValue={languageSelected}
         options={languageOptions}
