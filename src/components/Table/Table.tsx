@@ -17,12 +17,12 @@ export const Table = (): JSX.Element => {
   ]
 
   return (
-    <div className="max-w-6xl mx-auto pt-24 pb-14 px-3">
+    <div className="max-w-6xl m-auto pt-16 pb-14 px-3">
       <table className="w-full mb-2">
         <thead className="text-white/80">
           <tr className='border-b-[.5px] border-white'>
             {tableHeaders.map((head: TableHead, i: number) => (
-              <Head key={i} title={currentLanguage === language.En ? head.en : head.fr} className={head.className} />
+              <Head key={i + Date.now()} title={currentLanguage === language.En ? head.en : head.fr} className={head.className} />
             ))}
           </tr>
         </thead>
