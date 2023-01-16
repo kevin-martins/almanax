@@ -1,7 +1,8 @@
-import React from 'react'
 import { useAppSelector } from '../../app/hooks'
+import { splitNumbers, textFormat } from '../../helpers/helpers'
 import { DataProps } from '../../models/data'
 import { FilterSearch } from '../../models/filter'
+import { HighlightBonusNumbers } from '../../models/table'
 
 type Props = {
   cell: DataProps,
@@ -14,7 +15,7 @@ const Cell = ({ cell, dataLength, index }: Props): JSX.Element => {
   if (filter === FilterSearch.None || filter === cell.filterSearch)
     return (
       <tr
-        className={`${index !== dataLength - 1 && 'border-b-[.5px] border-white/20'} text-center text-white hover:bg-white/20 h-full`}
+        className={`${index !== dataLength - 1 && 'border-b-[.5px] border-white/20'} text-center text-white hover:bg-white/20 h-full text-md`}
       >
         <td>
           {cell.date}
@@ -22,18 +23,22 @@ const Cell = ({ cell, dataLength, index }: Props): JSX.Element => {
         <td>
           <div className='flex'>
             <img src={cell.icon} alt={cell.name} className='w-10 h-10 my-auto' />
-            <p className='mx-auto'>{cell.name}</p>
+            <p className='m-auto'>{cell.name}</p>
           </div>
         </td>
         <td>
-          {cell.quantity}
+          <p className='text-xl'>{cell.quantity}</p>
         </td>
-        <td>{cell.bonus}</td>
+        <td>
+          {splitNumbers(textFormat(cell.bonus)).map((text: HighlightBonusNumbers, i: number) => {
+            if (text.isNumber) return <span key={i + Date.now()} className='font-bold text-yellow-500'>{text.text}</span>
+            return <span key={i + Date.now()}>{text.text}</span>
+          })}
+          {/* {cell.bonus} */}
+        </td>
       </tr>
     )
-  return (
-    <></>
-  )
+  return (<></>)
 }
 
 export default Cell
