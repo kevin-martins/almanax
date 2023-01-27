@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { filterOptions } from "../api/select";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { createArray, setFilter, setLanguage } from "../features/almanax-slice";
+import { createArray, setFilter } from "../features/almanax-slice";
 import { useFetchAlmanaxQuery } from "../features/almanax/almanax-api-slice";
 import { getFilterSearch } from "../helpers/helpers";
 import { FilterSearch } from "../models/filter";
-import Loading from "./Loading";
-import Select from "./Select";
-import Table from "./Table/Table";
+import Loading from "../components/Loading";
+import Select from "../components/Select";
+import Table from "../components/Table/Table";
 
-export const App = () => {
+export const Almanax = () => {
   const languageSelected = useAppSelector(state => state.almanax.language)
   const filterSelected = useAppSelector(state => state.almanax.filter)
   const days = useAppSelector(state => state.almanax.days)
@@ -51,4 +51,4 @@ export const App = () => {
   );
 }
 
-export default App;
+export default Almanax;
