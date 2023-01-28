@@ -24,12 +24,13 @@ export const Select = ({ currentValue, options, onChange }: Props) => {
     <select
       value={currentValue}
       onChange={onChange}
-      className="outline-none bg-gray-800 shadow-2xl text-yellow-500 p-2 text-lg mt-5"
+      className="outline-none bg-gray-700 shadow-2xl text-yellow-500 p-2 text-lg mt-5"
     >
       {options.map((option: Option, i: number) => (
         <option
           key={i + Date.now()}
           value={option.value}
+          className="bg-gray-700"
         >
           {getTextByLanguage(option.text, language)}
         </option>

@@ -33,7 +33,7 @@ export const Almanax = () => {
   }, [isFetching])
 
   return (
-    <div className={`${filterSelected !== FilterSearch.None && 'h-screen'} bg-gray-800`}>
+    <div className={`${filterSelected !== (FilterSearch.None || FilterSearch.Other) && 'h-screen'} bg-gray-800`}>
       {/* <Select
         currentValue={languageSelected}
         options={languageOptions}
