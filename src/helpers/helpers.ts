@@ -47,3 +47,13 @@ export const textFormat = (text: string): string => {
     }
     return text
 }
+
+export const getFilterValue = (currentFilter: FilterSearch, filters: FilterSearch[]): boolean => {
+    for (const filter of filters) {
+        if (filter === currentFilter) {
+            console.log(filter, currentFilter);
+            return true
+        }
+    }
+    return false
+}

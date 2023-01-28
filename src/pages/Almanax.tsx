@@ -3,7 +3,7 @@ import { filterOptions } from "../api/select";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { createArray, setFilter } from "../features/almanax-slice";
 import { useFetchAlmanaxQuery } from "../features/almanax/almanax-api-slice";
-import { getFilterSearch } from "../helpers/helpers";
+import { getFilterSearch, getFilterValue } from "../helpers/helpers";
 import { FilterSearch } from "../models/filter";
 import Loading from "../components/Loading";
 import Select from "../components/Select";
@@ -33,7 +33,7 @@ export const Almanax = () => {
   }, [isFetching])
 
   return (
-    <div className={`${filterSelected !== (FilterSearch.None || FilterSearch.Other) && 'h-screen'} bg-gray-800`}>
+    <div className="h-full bg-gray-800">
       {/* <Select
         currentValue={languageSelected}
         options={languageOptions}
