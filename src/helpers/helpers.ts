@@ -57,3 +57,7 @@ export const getFilterValue = (currentFilter: FilterSearch, filters: FilterSearc
     }
     return false
 }
+
+export const capitalize = (string: string): string => {
+    return string[0].toUpperCase() + string.split('').splice(1, string.length).join('')
+}
