@@ -1,28 +1,28 @@
-import React from 'react'
 import monsterData from '../api/keepedMonsters.json'
 
-const Monsters = () => {
-    console.log(monsterData)
+const Monsters = (): JSX.Element => {
     return (
-        <div className='text-white'>
+        <div className='flex flex-wrap gap-4 max-w-6xl mx-auto mt-10'>
             {monsterData.map(monster => {
-                const element = monster.resistances
                 return (
-                    <>
-                        <img src={monster.url} alt={monster.name} />
-                        <p>{monster.name}</p>
+                    <div className='w-80 h-60 bg-white rounded shadow-lg mx-auto'>
+                        <img src={monster.imgUrl} alt={monster.name} />
+                        <p className='text-lg'>{monster.name}</p>
                         <p>{monster.monsterType}</p>
                         <ul>
-                            {monster.resistances.map((resistance, i: number) => {
-                                const currentElement = Object.keys(element[i])
-                                console.log(currentElement)
+                            {monster.resistances.map((resistance: any, i: number) => {
+                                const currentElement = Object.keys(resistance)[0]
+                                const min = resistance[currentElement].min
+                                const max = resistance[currentElement].max
                                 return (
-                                    <li>{currentElement}: {currentElement[i]}</li>
-                                    // <li>{element[i]}: {resistance[element][i].min} | {resistance.Terre?.max}</li>
+                                    <li>{currentElement}: {max === null ? min : `${min} à ${max}`}</li>
                                 )
                             })}
                         </ul>
-                    </>
+                        <p>{monster.synergie}</p>
+                        <p>{monster.areas}</p>
+                        <p>{monster.archi?.name}</p>
+                    </div>
                 )
             })}
         </div>
