@@ -1,0 +1,1579 @@
+[
+  {
+    "_id": 113,
+    "ankamaId": 113,
+    "name": "Dragon Cochon",
+    "level": null,
+    "type": "Cochons",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/113.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/113-dragon-cochon",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2100,
+          "max": 3100
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 38,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": -5,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 38,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -5,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 38,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spell": [
+      {
+        "name": "Étourderie Mortelle",
+        "passif": false,
+        "effect": "Lancé seulement au 1er tour du combat, poison qui inflige une coco chargé par pa utilisé pendant 2 tours ! Ce sort peut être debuff."
+      },
+      {
+        "name": "Immobilisation",
+        "passif": false,
+        "effect": "-10pm lancé jusuqu'a 6po."
+      }
+    ]
+  },
+  {
+    "_id": 215,
+    "ankamaId": 215,
+    "name": "Trukikol",
+    "level": null,
+    "type": "Monstres de la Jungle Interdite",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/215.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/215-trukikol",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1600,
+          "max": 1800
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -18,
+          "max": -10
+        }
+      },
+      {
+        "Air": {
+          "min": 16,
+          "max": 24
+        }
+      },
+      {
+        "Feu": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 18,
+          "max": 26
+        }
+      },
+      {
+        "Neutre": {
+          "min": 0,
+          "max": null
+        }
+      }
+    ],
+    "areas": [
+      "Jungle Interdite"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": ""
+    },
+    "spell": [
+      {
+        "name": "Virevoltage collant",
+        "passif": false,
+        "effect": "Pose un glyphe de cercle 1 et de distance 3, vous perdez 100pm à l'interieur de celui-ci."
+      },
+      {
+        "name": "Électromagnétisme",
+        "passif": false,
+        "effect": "Autour du mob, cercle de taille 4. Vous attire de 3 cases vers les enemies qui vous tappent en ligne."
+      }
+    ]
+  },
+  {
+    "_id": 216,
+    "ankamaId": 216,
+    "name": "Gloutovore",
+    "level": null,
+    "type": "Monstres de la Jungle Interdite",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/216.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/216-gloutovore",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1600,
+          "max": 1800
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 6,
+          "max": 14
+        }
+      },
+      {
+        "Air": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -20,
+          "max": -12
+        }
+      },
+      {
+        "Eau": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 20,
+          "max": 28
+        }
+      }
+    ],
+    "areas": [
+      "Jungle Interdite"
+    ],
+    "monsterType": "Seulement en donjon",
+    "synergie": [
+      "Trukikol"
+    ],
+    "spell": [
+      {
+        "name": "Gobage",
+        "passif": false,
+        "effect": "Os que les enemies seulement mais jusqu'a 2 fois par tour, il attire sans ldv de 3 cases."
+      },
+      {
+        "name": "",
+        "passif": true,
+        "effect": "Lors de tentative de retrait pm: gagne 15% de regen (infini), tenta retrait pa: gagne 1pm (infini)"
+      }
+    ]
+  },
+  {
+    "_id": 229,
+    "ankamaId": 229,
+    "name": "Nakunbra",
+    "level": null,
+    "type": "Pirates de Moon",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/229.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/229-nakunbra",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1300,
+          "max": 1500
+        }
+      },
+      {
+        "PA": {
+          "min": 9,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -18,
+          "max": -10
+        }
+      },
+      {
+        "Air": {
+          "min": 6,
+          "max": 14
+        }
+      },
+      {
+        "Feu": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 6,
+          "max": 14
+        }
+      },
+      {
+        "Neutre": {
+          "min": 14,
+          "max": 22
+        }
+      }
+    ],
+    "areas": [
+      "Chemin du Crâne"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": "Nakuneuye le Borgne"
+    },
+    "synergie": [],
+    "spell": [
+      {
+        "name": "Tranchage Mortel",
+        "passif": false,
+        "effect": "Os si les pdv de la cible sont inférieur où égaux à 50%."
+      },
+      {
+        "name": "À l'abordage !",
+        "passif": true,
+        "effect": "gagne 1pm par dommage reçu."
+      }
+    ]
+  },
+  {
+    "_id": 230,
+    "ankamaId": 230,
+    "name": "Le Chouque",
+    "level": null,
+    "type": "Pirates de Moon",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/230.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/230-chouque",
+    "statistics": [
+      {
+        "PV": {
+          "min": 3100,
+          "max": 4500
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -10,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 36,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 14,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spell": [
+      {
+        "name": "Coup de Sabre Maudit",
+        "effect": "Applique l'etat 'maudit' au cac qui os si les pdv de la cible sont inférieur où égal à 30%."
+      }
+    ]
+  },
+  {
+    "_id": 651,
+    "ankamaId": 651,
+    "name": "Abrakne Sombre",
+    "level": null,
+    "type": "Abraknydiens",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/651.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/651-abrakne-sombre",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1500,
+          "max": 1900
+        }
+      },
+      {
+        "PA": {
+          "min": 9,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -24,
+          "max": -12
+        }
+      },
+      {
+        "Air": {
+          "min": 12,
+          "max": 24
+        }
+      },
+      {
+        "Feu": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      {
+        "Eau": {
+          "min": -17,
+          "max": -5
+        }
+      },
+      {
+        "Neutre": {
+          "min": 16,
+          "max": 28
+        }
+      }
+    ],
+    "areas": [
+      "Forêt Sombre"
+    ],
+    "monsterType": "Seulement en donjon",
+    "synergie": [
+      ""
+    ],
+    "spell": [
+      {
+        "name": "Invocation de Champa Sombre",
+        "passif": false,
+        "effect": "Invoque un des 4 champa existant. Le [Champa Bleu] os"
+      }
+    ]
+  },
+  {
+    "_id": 654,
+    "ankamaId": 654,
+    "name": "Champa Bleu",
+    "level": null,
+    "type": "Champs",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/654.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/654-champa-bleu",
+    "statistics": [
+      {
+        "PV": {
+          "min": 320,
+          "max": 450
+        }
+      },
+      {
+        "PA": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 2,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -9,
+          "max": -5
+        }
+      },
+      {
+        "Air": {
+          "min": -9,
+          "max": -5
+        }
+      },
+      {
+        "Feu": {
+          "min": -9,
+          "max": -5
+        }
+      },
+      {
+        "Eau": {
+          "min": 60,
+          "max": 68
+        }
+      },
+      {
+        "Neutre": {
+          "min": 50,
+          "max": 58
+        }
+      }
+    ],
+    "areas": [
+      "Clairière de Brouce Boulgoure"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": ""
+    },
+    "synergie": [],
+    "spell": "Os au cac seulement. Il a aucun sort de tp, de boost pm ni de sort d'attirance."
+  },
+  {
+    "_id": 670,
+    "ankamaId": 670,
+    "name": "Koulosse",
+    "level": null,
+    "type": "Monstres des cavernes",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/670.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/670-koulosse",
+    "statistics": [
+      {
+        "PV": {
+          "min": 5800,
+          "max": 8600
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 28,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 33,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 78,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [
+      "Boufcoul"
+    ],
+    "spell": [
+      {
+        "name": "Souffle du Koulosse",
+        "passif": false,
+        "effect": "Peut attirer à son cac. Une fois au cac il peut vous transformer en boufcool qui à pour effet de rendre totalement innofensif (-100pa et -100pm)."
+      },
+      {
+        "name": "Invocation de Bouftou des cavernes",
+        "passif": false,
+        "effect": "Invoque un [Bouftou des Cavernes] ou un [Boufcoul] en crit."
+      },
+      {
+        "name": "Appel du Koulosse",
+        "passif": false,
+        "effect": "Lançable en ligne, et jusqu'a 8po, attire les enemies à son cac."
+      }
+    ]
+  },
+  {
+    "_id": 755,
+    "ankamaId": 755,
+    "name": "Mama Koalak",
+    "level": null,
+    "type": "Koalaks",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/755.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/755-mama-koalak",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1500,
+          "max": 1700
+        }
+      },
+      {
+        "PA": {
+          "min": 7,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 50,
+          "max": 58
+        }
+      },
+      {
+        "Air": {
+          "min": -18,
+          "max": -10
+        }
+      },
+      {
+        "Feu": {
+          "min": 30,
+          "max": 38
+        }
+      },
+      {
+        "Eau": {
+          "min": -10,
+          "max": -2
+        }
+      },
+      {
+        "Neutre": {
+          "min": 30,
+          "max": 38
+        }
+      }
+    ],
+    "areas": [
+      "Canyon sauvage"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": "Mamakomou l'Âge"
+    },
+    "synergie": [
+      ""
+    ],
+    "spell": [
+      {
+        "name": "Accouchement",
+        "passif": false,
+        "effect": "Invoque un koalak, 10% chance d'invoquer un [Koalak Forestier]."
+      }
+    ]
+  },
+  {
+    "_id": 783,
+    "ankamaId": 783,
+    "name": "Fauchalak",
+    "level": null,
+    "type": "Koalaks",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/783.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/783-fauchalak",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2000,
+          "max": 2400
+        }
+      },
+      {
+        "PA": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 2,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 10,
+          "max": 18
+        }
+      },
+      {
+        "Air": {
+          "min": -10,
+          "max": -6
+        }
+      },
+      {
+        "Feu": {
+          "min": -10,
+          "max": -6
+        }
+      },
+      {
+        "Eau": {
+          "min": 20,
+          "max": 28
+        }
+      },
+      {
+        "Neutre": {
+          "min": 30,
+          "max": 38
+        }
+      }
+    ],
+    "areas": [
+      "Vallée de la Morh'Kitu"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": "Faufoll la Joyeuse"
+    },
+    "synergie": [
+      ""
+    ],
+    "spell": [
+      {
+        "name": "Malédiction Koalak",
+        "passif": false,
+        "effect": "Retire à 3po autour de lui soit (3 à 4pm, 3 à 4pa, 100 esquive pa ou pm, 400 stats élémentaire, 50% crit, 200 dommages, 200 soin)."
+      },
+      {
+        "name": "Fauche",
+        "passif": false,
+        "effect": "Os au cac pour vous remplacer par un fantôme de niveau 100."
+      }
+    ]
+  },
+  {
+    "_id": 785,
+    "ankamaId": 785,
+    "name": "Koalak Forestier",
+    "level": null,
+    "type": "Koalaks",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/785.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/785-koalak-forestier",
+    "statistics": [
+      {
+        "PV": {
+          "min": 990,
+          "max": 1200
+        }
+      },
+      {
+        "PA": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 3,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 10,
+          "max": 14
+        }
+      },
+      {
+        "Air": {
+          "min": -15,
+          "max": -11
+        }
+      },
+      {
+        "Feu": {
+          "min": 20,
+          "max": 24
+        }
+      },
+      {
+        "Eau": {
+          "min": -25,
+          "max": -21
+        }
+      },
+      {
+        "Neutre": {
+          "min": 10,
+          "max": 18
+        }
+      }
+    ],
+    "areas": [
+      "Forêt de Kaliptus"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": ""
+    },
+    "synergie": [],
+    "spell": [
+      {
+        "name": "",
+        "passif": false,
+        "effect": "Transforme en buisson au cac (-100pa et -100pm)."
+      }
+    ]
+  },
+  {
+    "_id": 939,
+    "ankamaId": 939,
+    "name": "Rat Noir",
+    "level": null,
+    "type": "Monstres des égouts",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/939.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/939-rat-noir",
+    "statistics": [
+      {
+        "PV": {
+          "min": 3500,
+          "max": 5600
+        }
+      },
+      {
+        "PA": {
+          "min": 7,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 50,
+          "max": 55
+        }
+      },
+      {
+        "Air": {
+          "min": -20,
+          "max": -10
+        }
+      },
+      {
+        "Feu": {
+          "min": -20,
+          "max": -10
+        }
+      },
+      {
+        "Eau": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      {
+        "Neutre": {
+          "min": 5,
+          "max": 10
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [
+      ""
+    ],
+    "spell": [
+      {
+        "name": "Peste Noire",
+        "passif": false,
+        "effect": "Tape à hauteur de 50% de ses pv actuel (75% en crit) les personnes qui recoivent du soin en dommage air."
+      },
+      {
+        "name": "Kackitu",
+        "passif": false,
+        "effect": "Cencle de taille 1 autour du Rat Noir, os les personnes qui reçoivent des dommages neutre ou terre. En general il fait ce sort puis tape (dommages terre ou neutre) ce qui à donc pour effet de vous os, évitez d'être a son cac."
+      }
+    ]
+  },
+  {
+    "_id": 1044,
+    "ankamaId": 1044,
+    "name": "Kaskargo",
+    "level": null,
+    "type": "Monstres de l'Arbre Hakam",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1044.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1044-kaskargo",
+    "statistics": [
+      {
+        "PV": {
+          "min": 3300,
+          "max": 3900
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 15,
+          "max": 19
+        }
+      },
+      {
+        "Air": {
+          "min": 5,
+          "max": 9
+        }
+      },
+      {
+        "Feu": {
+          "min": -33,
+          "max": -21
+        }
+      },
+      {
+        "Eau": {
+          "min": 25,
+          "max": 33
+        }
+      },
+      {
+        "Neutre": {
+          "min": 1,
+          "max": 5
+        }
+      }
+    ],
+    "areas": [
+      "Tronc de l'arbre Hakam",
+      "Feuillage de l'arbre Hakam"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": ""
+    },
+    "synergie": [
+      ""
+    ],
+    "spell": "pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"
+  },
+  {
+    "_id": 1181,
+    "ankamaId": 1181,
+    "name": "Gloutoblop",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1181.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1181-gloutoblop",
+    "statistics": [
+      {
+        "PV": {
+          "min": 800,
+          "max": 1000
+        }
+      },
+      {
+        "PA": {
+          "min": 6,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -9,
+          "max": -5
+        }
+      },
+      {
+        "Air": {
+          "min": 11,
+          "max": 15
+        }
+      },
+      {
+        "Feu": {
+          "min": -24,
+          "max": -20
+        }
+      },
+      {
+        "Eau": {
+          "min": 26,
+          "max": 30
+        }
+      },
+      {
+        "Neutre": {
+          "min": 21,
+          "max": 25
+        }
+      }
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": "Gloubibou le Gars"
+    },
+    "synergie": [],
+    "spell": [
+      {
+        "name": "Gloutage",
+        "effect": "Il os que au cac aliée comme enemies au cac et ça le buff de 200 hp et 2pm infinie, il n'attire pas. Evite de le feed !"
+      }
+    ]
+  },
+  {
+    "_id": 2854,
+    "ankamaId": 2854,
+    "name": "Royalmouth",
+    "level": null,
+    "type": "Boufmouths",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/2854.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/2854-royalmouth",
+    "statistics": [
+      {
+        "PV": {
+          "min": 4000,
+          "max": 5800
+        }
+      },
+      {
+        "PA": {
+          "min": 15,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 33,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 48,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 26,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -11,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 23,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "spell": "Os la personne qui lui fait subir des do pou et les personnes qui subissent des do pou contre lui. Attention donc au Boufmouth Légendaire qui peut pousser ! Si il vous pousse contre le boss vous êtes os."
+  },
+  {
+    "_id": 3460,
+    "ankamaId": 3460,
+    "name": "Wa Wobot",
+    "level": null,
+    "type": "Wabbits",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/3460.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/3460-wa-wobot",
+    "statistics": [
+      {
+        "PV": {
+          "min": 3500,
+          "max": 5000
+        }
+      },
+      {
+        "PA": {
+          "min": 14,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 6,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 16,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 21,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 25,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -10,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spell": "Les auto-tamponeuses pouses dès que vous êtes poussé dessus. Si vous êtes dans le cas de figure ou 2 auto-tamponeuses vous pousse l'une vers l'autre et vice versa, vous êtes os."
+  },
+  {
+    "_id": 3482,
+    "ankamaId": 3482,
+    "name": "Dramak",
+    "level": null,
+    "type": "Monstres de l'île de Kartonpath",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/3482.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/3482-dramak",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2100,
+          "max": null
+        }
+      },
+      {
+        "PA": {
+          "min": 9,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 4,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -10,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 20,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 25,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -15,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 40,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Seulement en donjon",
+    "spell": [
+      {
+        "name": "",
+        "passif": false,
+        "effect": "Transforme en marionette au cac, ce qui a pour effet de vous retirer 100pa et 100pm pour le tour."
+      }
+    ]
+  },
+  {
+    "_id": 3651,
+    "ankamaId": 3651,
+    "name": "Phossile",
+    "level": null,
+    "type": "Phorreurs",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/3651.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/3651-phossile",
+    "statistics": [
+      {
+        "PV": {
+          "min": 8600,
+          "max": 12000
+        }
+      },
+      {
+        "PA": {
+          "min": 14,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 22,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 37,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 28,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 13,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -5,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "spell": [
+      {
+        "name": "Phorreur de Gloire",
+        "passif": true,
+        "effect": "Os à 3po autour de lui au tour 5 puis tous les 4 tours."
+      },
+      {
+        "name": "Phorce",
+        "passif": false,
+        "effect": "Jusqu'a 3po, tape 50% des pv érodés."
+      }
+    ]
+  },
+  {
+    "_id": 3991,
+    "ankamaId": 3991,
+    "name": "Arapex",
+    "level": null,
+    "type": "Arak-haï",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/3991.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/3991-arapex",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1300,
+          "max": 1500
+        }
+      },
+      {
+        "PA": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 20,
+          "max": 25
+        }
+      },
+      {
+        "Air": {
+          "min": -20,
+          "max": -10
+        }
+      },
+      {
+        "Feu": {
+          "min": 10,
+          "max": 18
+        }
+      },
+      {
+        "Eau": {
+          "min": 5,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -20,
+          "max": -10
+        }
+      }
+    ],
+    "monsterType": "Seulement en donjon",
+    "synergie": [
+      "Néfileuse"
+    ],
+    "spell": [
+      {
+        "name": "Exécution",
+        "passif": false,
+        "effect": "Os les enemies ayant l'etat cocon lancé par la [Néfileuse]."
+      },
+      {
+        "name": "Fauche",
+        "passif": false,
+        "effect": "Os au cac pour vous remplacer par un fantôme de niveau 100."
+      }
+    ]
+  },
+  {
+    "_id": 3993,
+    "ankamaId": 3993,
+    "name": "Néfileuse",
+    "level": null,
+    "type": "Arak-haï",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/3993.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/3993-nefileuse",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1300,
+          "max": 1500
+        }
+      },
+      {
+        "PA": {
+          "min": 8,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 10,
+          "max": 15
+        }
+      },
+      {
+        "Feu": {
+          "min": -30,
+          "max": -20
+        }
+      },
+      {
+        "Eau": {
+          "min": 22,
+          "max": 30
+        }
+      },
+      {
+        "Neutre": {
+          "min": -14,
+          "max": -10
+        }
+      }
+    ],
+    "areas": [
+      "Bois des Arak-haï"
+    ],
+    "monsterType": "Commun",
+    "synergie": [
+      ""
+    ],
+    "spell": [
+      {
+        "name": "Prison de soie",
+        "passif": false,
+        "effect": "Transforme un enemie en cocon au cac. Tous les 3 tours"
+      },
+      {
+        "name": "Toile paralysante",
+        "passif": false,
+        "effect": "Une sorte de glyphe qui a pour effet: -100pm, -10% res et applique les etats pesanteur et inébranlable."
+      }
+    ]
+  },
+  {
+    "_id": 4619,
+    "ankamaId": 4619,
+    "name": "Léolhyène",
+    "level": null,
+    "type": "Animaux du désert",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/4619.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/4619-leolhyene",
+    "statistics": [
+      {
+        "PV": {
+          "min": 1000,
+          "max": 1200
+        }
+      },
+      {
+        "PA": {
+          "min": 9,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -21,
+          "max": -13
+        }
+      },
+      {
+        "Air": {
+          "min": 34,
+          "max": 42
+        }
+      },
+      {
+        "Feu": {
+          "min": 9,
+          "max": 17
+        }
+      },
+      {
+        "Eau": {
+          "min": -9,
+          "max": -1
+        }
+      },
+      {
+        "Neutre": {
+          "min": 24,
+          "max": 32
+        }
+      }
+    ],
+    "areas": [
+      "Dunes des ossements"
+    ],
+    "monsterType": "Commun",
+    "archi": {
+      "monsterType": "Archi-monstre",
+      "name": ""
+    },
+    "synergie": [],
+    "spell": "Lorsqu'il tape avec le sort 'mort sûre' (lançable uniquement au cac), il applique un etat qui se charge. Au stade 4, vous êtes os. Je ne sais pas si l'etat est indépendant au mob ou si d'autres mobs du même type peuvent booster l'etat."
+  }
+]
