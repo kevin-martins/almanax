@@ -61,7 +61,7 @@
     ],
     "monsterType": "Boss",
     "synergie": [],
-    "spell": [
+    "spells": [
       {
         "name": "Étourderie Mortelle",
         "passif": false,
@@ -142,7 +142,7 @@
       "monsterType": "Archi-monstre",
       "name": ""
     },
-    "spell": [
+    "spells": [
       {
         "name": "Virevoltage collant",
         "passif": false,
@@ -222,7 +222,7 @@
     "synergie": [
       "Trukikol"
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Gobage",
         "passif": false,
@@ -304,7 +304,7 @@
       "name": "Nakuneuye le Borgne"
     },
     "synergie": [],
-    "spell": [
+    "spells": [
       {
         "name": "Tranchage Mortel",
         "passif": false,
@@ -379,7 +379,7 @@
     ],
     "monsterType": "Boss",
     "synergie": [],
-    "spell": [
+    "spells": [
       {
         "name": "Coup de Sabre Maudit",
         "effect": "Applique l'etat 'maudit' au cac qui os si les pdv de la cible sont inférieur où égal à 30%."
@@ -453,7 +453,7 @@
     "synergie": [
       ""
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Invocation de Champa Sombre",
         "passif": false,
@@ -530,7 +530,13 @@
       "name": ""
     },
     "synergie": [],
-    "spell": "Os au cac seulement. Il a aucun sort de tp, de boost pm ni de sort d'attirance."
+    "spells": [
+      {
+        "name": "",
+        "passif": false,
+        "effect": "Os au cac seulement."
+      }
+    ]
   },
   {
     "_id": 670,
@@ -596,7 +602,7 @@
     "synergie": [
       "Boufcoul"
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Souffle du Koulosse",
         "passif": false,
@@ -685,7 +691,7 @@
     "synergie": [
       ""
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Accouchement",
         "passif": false,
@@ -764,7 +770,7 @@
     "synergie": [
       ""
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Malédiction Koalak",
         "passif": false,
@@ -846,7 +852,7 @@
       "name": ""
     },
     "synergie": [],
-    "spell": [
+    "spells": [
       {
         "name": "",
         "passif": false,
@@ -918,7 +924,7 @@
     "synergie": [
       ""
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Peste Noire",
         "passif": false,
@@ -1003,7 +1009,13 @@
     "synergie": [
       ""
     ],
-    "spell": "pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"
+    "spells": [
+      {
+        "name": "",
+        "passif": false,
+        "effect": "pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"
+      }
+    ]
   },
   {
     "_id": 1181,
@@ -1071,10 +1083,11 @@
       "name": "Gloubibou le Gars"
     },
     "synergie": [],
-    "spell": [
+    "spells": [
       {
         "name": "Gloutage",
-        "effect": "Il os que au cac aliée comme enemies au cac et ça le buff de 200 hp et 2pm infinie, il n'attire pas. Evite de le feed !"
+        "passif": false,
+        "effect": "Lançable que au cac et pouvait s'utiliser contre enemies comme aliés, il os la cible pour se buff de 200 hp et 2pm infinie."
       }
     ]
   },
@@ -1139,7 +1152,13 @@
       }
     ],
     "monsterType": "Boss",
-    "spell": "Os la personne qui lui fait subir des do pou et les personnes qui subissent des do pou contre lui. Attention donc au Boufmouth Légendaire qui peut pousser ! Si il vous pousse contre le boss vous êtes os."
+    "spells": [
+      {
+        "name": "",
+        "passif": true,
+        "effect": "Os la personne qui lui fait subir des do pou et les personnes qui subissent des do pou contre lui. Attention donc au Boufmouth Légendaire qui peut pousser ! Si il vous pousse contre le boss vous êtes os."
+      }
+    ]
   },
   {
     "_id": 3460,
@@ -1203,7 +1222,13 @@
     ],
     "monsterType": "Boss",
     "synergie": [],
-    "spell": "Les auto-tamponeuses pouses dès que vous êtes poussé dessus. Si vous êtes dans le cas de figure ou 2 auto-tamponeuses vous pousse l'une vers l'autre et vice versa, vous êtes os."
+    "spells": [
+      {
+        "name": "",
+        "passif": true,
+        "effect": "Les auto-tamponeuses pouses dès que vous êtes poussé dessus. Si vous êtes dans le cas de figure ou 2 auto-tamponeuses vous pousse l'une vers l'autre et vice versa, vous êtes os."
+      }
+    ]
   },
   {
     "_id": 3482,
@@ -1266,7 +1291,7 @@
       }
     ],
     "monsterType": "Seulement en donjon",
-    "spell": [
+    "spells": [
       {
         "name": "",
         "passif": false,
@@ -1335,7 +1360,7 @@
       }
     ],
     "monsterType": "Boss",
-    "spell": [
+    "spells": [
       {
         "name": "Phorreur de Gloire",
         "passif": true,
@@ -1412,7 +1437,7 @@
     "synergie": [
       "Néfileuse"
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Exécution",
         "passif": false,
@@ -1492,7 +1517,7 @@
     "synergie": [
       ""
     ],
-    "spell": [
+    "spells": [
       {
         "name": "Prison de soie",
         "passif": false,
@@ -1574,6 +1599,12 @@
       "name": ""
     },
     "synergie": [],
-    "spell": "Lorsqu'il tape avec le sort 'mort sûre' (lançable uniquement au cac), il applique un etat qui se charge. Au stade 4, vous êtes os. Je ne sais pas si l'etat est indépendant au mob ou si d'autres mobs du même type peuvent booster l'etat."
+    "spells": [
+      {
+        "name": "Mort Sûre",
+        "pasif": false,
+        "effect": "Lançable que au cac, il applique un etat qui se charge. Au stade 4, vous êtes os. A déterminer si l'etat est indépendant à chaque Léolhyène ou cumulable entre les Léolhyène. Ce faisait vous pourrez sans doute être os plus rapidement."
+      }
+    ]
   }
 ]
