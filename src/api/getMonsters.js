@@ -1,17 +1,11 @@
 const fs = require('fs');
-
-const MonsterType = {
-    Boss: "Boss",
-    DungeonOnly: "Seulement en donjon",
-    Commun: "Commun",
-    Archi: "Archi-monstre"
-}
+const { MonsterTypes } = require('../models/monsters')
 
 const dataMobs = [
     {
         name: "Nakunbra",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "Nakuneuye le Borgne" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "Nakuneuye le Borgne" },
         synergie: [],
         spells: [
             { name: "Tranchage Mortel", passif: false, effect: "Os si les pdv de la cible sont inférieur où égaux à 50%." },
@@ -20,7 +14,7 @@ const dataMobs = [
     },
     {
         name: "Le Chouque",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
             { name: "Coup de Sabre Maudit", effect: "Applique l'etat 'maudit' au cac qui os si les pdv de la cible sont inférieur où égal à 30%."},
@@ -28,7 +22,7 @@ const dataMobs = [
     },
     {
         name: "Gloutovore",
-        monsterType: MonsterType.DungeonOnly ,
+        monsterType: MonsterTypes.DungeonOnly ,
         synergie: ["Trukikol"],
         spells: [
             { name: "Gobage", passif: false, effect: "Os que les enemies seulement mais jusqu'a 2 fois par tour, il attire sans ldv de 3 cases." },
@@ -37,8 +31,8 @@ const dataMobs = [
     },
     {
         name: "Gloutoblop",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "Gloubibou le Gars" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "Gloubibou le Gars" },
         synergie: [],
         spells: [
             { name: "Gloutage", passif: false, effect: "Lançable que au cac et pouvait s'utiliser contre enemies comme aliés, il os la cible pour se buff de 200 hp et 2pm infinie."},
@@ -46,8 +40,8 @@ const dataMobs = [
     },
     {
         name: "Champa Bleu",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
             { name: "", passif: false, effect: "Os au cac seulement."},
@@ -55,8 +49,8 @@ const dataMobs = [
     },
     {
         name: "Léolhyène",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
             { name: "Mort Sûre", pasif: false, effect: "Lançable que au cac, il applique un etat qui se charge. Au stade 4, vous êtes os. A déterminer si l'etat est indépendant à chaque Léolhyène ou cumulable entre les Léolhyène. Ce faisait vous pourrez sans doute être os plus rapidement."},
@@ -64,7 +58,7 @@ const dataMobs = [
     },
     {
         name: "Wa Wobot",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
             { name: "", passif: true, effect: "Les auto-tamponeuses pouses dès que vous êtes poussé dessus. Si vous êtes dans le cas de figure ou 2 auto-tamponeuses vous pousse l'une vers l'autre et vice versa, vous êtes os." },
@@ -72,8 +66,8 @@ const dataMobs = [
     },
     {
         name: "Kaskargo",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [""],
         spells: [
             { name: "", passif: false, effect: "pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"},
@@ -81,7 +75,7 @@ const dataMobs = [
     },
     {
         name: "Dragon Cochon",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
             { name: "Étourderie Mortelle", passif: false, effect: "Lancé seulement au 1er tour du combat, poison qui inflige une coco chargé par pa utilisé pendant 2 tours ! Ce sort peut être debuff."},
@@ -90,14 +84,14 @@ const dataMobs = [
     },
     {
         name: "Royalmouth",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         spells: [
             { name: "", passif: true, effect: "Os la personne qui lui fait subir des do pou et les personnes qui subissent des do pou contre lui. Attention donc au Boufmouth Légendaire qui peut pousser ! Si il vous pousse contre le boss vous êtes os." },
         ],
     },
     {
         name: "Les Tynrils",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: ["Tynril Déconcerté", "Tynril Consterné", "Tynril Ahuri", "Tynril Perfide"],
         spells: [
             { name: "", passif: false, effect: "Peuvent os au cac et se coop entre-eux ! Prevoyez une certaine distance puisqu'il peuvent donc se déplacer de 8 cases (2pm chacun) en tout si ils coop le Tynril le plus proche de vous." },
@@ -105,13 +99,13 @@ const dataMobs = [
     },
     {
         name: "Abrakne Sombre",
-        monsterType: MonsterType.DungeonOnly,
+        monsterType: MonsterTypes.DungeonOnly,
         synergie: [""],
         spells: [{ name: "Invocation de Champa Sombre", passif: false, effect: "Invoque un des 4 champa existant. Le [Champa Bleu] os" }],
     },
     {
         name: "Rat Noir",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: [""],
         spells: [
             { name: "Peste Noire", passif: false, effect: "Tape à hauteur de 50% de ses pv actuel (75% en crit) les personnes qui recoivent du soin en dommage air." },
@@ -120,7 +114,7 @@ const dataMobs = [
     },
     {
         name: "Koulosse",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         synergie: ["Boufcoul"],
         spells: [
             { name: "Souffle du Koulosse", passif: false, effect: "Peut attirer à son cac. Une fois au cac il peut vous transformer en boufcool qui à pour effet de rendre totalement innofensif (-100pa et -100pm)." },
@@ -130,8 +124,8 @@ const dataMobs = [
     },
     {
         name: "Fauchalak",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "Faufoll la Joyeuse" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "Faufoll la Joyeuse" },
         synergie: [""],
         spells: [
             { name: "Malédiction Koalak", passif: false, effect: "Retire à 3po autour de lui soit (3 à 4pm, 3 à 4pa, 100 esquive pa ou pm, 400 stats élémentaire, 50% crit, 200 dommages, 200 soin)." },
@@ -140,7 +134,7 @@ const dataMobs = [
     },
     {
         name: "Arapex",
-        monsterType: MonsterType.DungeonOnly,
+        monsterType: MonsterTypes.DungeonOnly,
         synergie: ["Néfileuse"],
         spells: [
             { name: "Exécution", passif: false, effect: "Os les enemies ayant l'etat cocon lancé par la [Néfileuse]." },
@@ -149,7 +143,7 @@ const dataMobs = [
     },
     {
         name: "Néfileuse",
-        monsterType: MonsterType.Commun,
+        monsterType: MonsterTypes.Commun,
         synergie: [""],
         spells: [
             { name: "Prison de soie", passif: false, effect: "Transforme un enemie en cocon au cac. Tous les 3 tours" },
@@ -158,8 +152,8 @@ const dataMobs = [
     },
     {
         name: "Mama Koalak",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "Mamakomou l'Âge" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "Mamakomou l'Âge" },
         synergie: [""],
         spells: [
             { name: "Accouchement", passif: false, effect: "Invoque un koalak, 10% chance d'invoquer un [Koalak Forestier]."},
@@ -167,8 +161,8 @@ const dataMobs = [
     },
     {
         name: "Koalak Forestier",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
             { name: "", passif: false, effect: "Transforme en buisson au cac (-100pa et -100pm)." },
@@ -176,8 +170,8 @@ const dataMobs = [
     },
     {
         name: "Trukikol",
-        monsterType: MonsterType.Commun,
-        archi: { monsterType: MonsterType.Archi, name: "" },
+        monsterType: MonsterTypes.Commun,
+        archi: { monsterType: MonsterTypes.Archi, name: "" },
         spells: [
             { name: "Virevoltage collant", passif: false, effect: "Pose un glyphe de cercle 1 et de distance 3, vous perdez 100pm à l'interieur de celui-ci." },
             { name: "Électromagnétisme", passif: false, effect: "Autour du mob, cercle de taille 4. Vous attire de 3 cases vers les enemies qui vous tappent en ligne." },
@@ -185,14 +179,14 @@ const dataMobs = [
     },
     {
         name: "Dramak",
-        monsterType: MonsterType.DungeonOnly,
+        monsterType: MonsterTypes.DungeonOnly,
         spells: [
             { name: "", passif: false, effect: "Transforme en marionette au cac, ce qui a pour effet de vous retirer 100pa et 100pm pour le tour." },
         ],
     },
     {
         name: "Phossile",
-        monsterType: MonsterType.Boss,
+        monsterType: MonsterTypes.Boss,
         spells: [
             { name: "Phorreur de Gloire", passif: true, effect: "Os à 3po autour de lui au tour 5 puis tous les 4 tours." },
             { name: "Phorce", passif: false, effect: "Jusqu'a 3po, tape 50% des pv érodés." },
@@ -232,7 +226,8 @@ fs.readFile('src/api/dataMonsters.json', async (err, data) => {
             delete newData.drops
             createNewMonsterApi.push(newData)
             // console.log(newData)
-            console.log("Added \x1b[36m" + newData.name + "\x1b[0m to Database")
+            // console.log("Added \x1b[36m" + newData.name + "\x1b[0m to Database")
+            console.log(newData.url)
         }
     })
     // fs.unlinkSync('src/api/keepedMonsters.json');
