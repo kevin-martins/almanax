@@ -1,13 +1,18 @@
+import { useState } from 'react'
 import monsterData from '../api/keepedMonsters.json'
 import { getPath, monsterTypeToIcon } from '../helpers/helpers'
 
 const Monsters = (): JSX.Element => {
+    const [hover, setHover] = useState(false)
     return (
         <div className='flex flex-wrap gap-10 max-w-7xl mx-auto mt-20 pb-44'>
             {monsterData.map(monster => {
                 return (
-                    <div className='relative w-96 h-60 bg-slate-800 border-2 hover:border-yellow-500 border-gray-900 rounded shadow-lg mx-auto'>
-                        <div className='absolute py-2 px-4 bg-yellow-500 w-max left-1/2 -translate-x-1/2 -top-8 text-center rounded'>
+                    <div
+                        className='relative w-96 h-60 bg-slate-800 border-2 hover:border-yellow-500 border-gray-900 rounded shadow-lg mx-auto'
+                        
+                    >
+                        <div className='absolute py-2 px-4 bg-yellow-500 w-max left-1/2 -translate-x-1/2 -top-4 text-center rounded'>
                             {/* <img src={monsterTypeToIcon(monster.monsterType)} alt={monster.name} className="absolute left-1/2 -translate-x-1/2 -top-3" /> */}
                             {/* <p>{monster.monsterType}</p> */}
                             <p className='text-xl font-bold'>{monster.name}</p>

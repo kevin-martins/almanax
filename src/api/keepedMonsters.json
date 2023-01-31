@@ -303,7 +303,6 @@
       "monsterType": "Archi-monstre",
       "name": "Nakuneuye le Borgne"
     },
-    "synergie": [],
     "spells": [
       {
         "name": "Tranchage Mortel",
@@ -378,7 +377,6 @@
       }
     ],
     "monsterType": "Boss",
-    "synergie": [],
     "spells": [
       {
         "name": "Coup de Sabre Maudit",
@@ -450,9 +448,6 @@
       "Forêt Sombre"
     ],
     "monsterType": "Seulement en donjon",
-    "synergie": [
-      ""
-    ],
     "spells": [
       {
         "name": "Invocation de Champa Sombre",
@@ -600,7 +595,10 @@
     ],
     "monsterType": "Boss",
     "synergie": [
-      "Boufcoul"
+      {
+        "name": "Boufcoul",
+        "effect": "Peut rendre invisible ses aliés en zone avec un boost de 5pm."
+      }
     ],
     "spells": [
       {
@@ -688,9 +686,7 @@
       "monsterType": "Archi-monstre",
       "name": "Mamakomou l'Âge"
     },
-    "synergie": [
-      ""
-    ],
+    "synergie": [],
     "spells": [
       {
         "name": "Accouchement",
@@ -767,9 +763,6 @@
       "monsterType": "Archi-monstre",
       "name": "Faufoll la Joyeuse"
     },
-    "synergie": [
-      ""
-    ],
     "spells": [
       {
         "name": "Malédiction Koalak",
@@ -922,7 +915,10 @@
     ],
     "monsterType": "Boss",
     "synergie": [
-      ""
+      {
+        "name": "Rat Molo, invocation du [Rate Atinée]",
+        "effect": "jusqu'a 2po, boost de 1pm infinie sans ldv et lançable tous les tours."
+      }
     ],
     "spells": [
       {
@@ -1018,6 +1014,92 @@
     ]
   },
   {
+    "_id": 1086,
+    "ankamaId": 1086,
+    "name": "Les Tynrils",
+    "level": null,
+    "type": "Monstres de la Jungle Obscure",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1072.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1072-tynril-consterne",
+    "statistics": [
+      {
+        "PV": {
+          "min": 3800,
+          "max": 5400
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 2,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 200,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 0,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 200,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 200,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": 200,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [
+      {
+        "ankamaId": 1085,
+        "name": "Tynril Déconcerté",
+        "effect": "Os au cac, se cool avec les autres Tynrils"
+      },
+      {
+        "ankamaId": 1086,
+        "name": "Tynril Perfide",
+        "effect": "Os au cac, se cool avec les autres Tynrils"
+      },
+      {
+        "ankamaId": 1087,
+        "name": "Tynril Ahuri",
+        "effect": "Os au cac, se cool avec les autres Tynrils"
+      }
+    ],
+    "spells": [
+      {
+        "name": "",
+        "passif": false,
+        "effect": "Peuvent os au cac et se coop entre-eux ! Prevoyez une certaine distance puisqu'il peuvent donc se déplacer de 8 cases (2pm chacun) en tout si ils coop le Tynril le plus proche de vous."
+      }
+    ]
+  },
+  {
     "_id": 1181,
     "ankamaId": 1181,
     "name": "Gloutoblop",
@@ -1082,12 +1164,363 @@
       "monsterType": "Archi-monstre",
       "name": "Gloubibou le Gars"
     },
-    "synergie": [],
+    "synergie": [
+      "Tronkoblop"
+    ],
     "spells": [
       {
         "name": "Gloutage",
         "passif": false,
         "effect": "Lançable que au cac et pouvait s'utiliser contre enemies comme aliés, il os la cible pour se buff de 200 hp et 2pm infinie."
+      }
+    ]
+  },
+  {
+    "_id": 1183,
+    "ankamaId": 1183,
+    "name": "Tronkoblop",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1183.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1183-tronkoblop",
+    "statistics": [
+      {
+        "PV": {
+          "min": 610,
+          "max": 780
+        }
+      },
+      {
+        "PA": {
+          "min": 7,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 2,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 41,
+          "max": 45
+        }
+      },
+      {
+        "Air": {
+          "min": -24,
+          "max": -20
+        }
+      },
+      {
+        "Feu": {
+          "min": 31,
+          "max": 35
+        }
+      },
+      {
+        "Eau": {
+          "min": -9,
+          "max": -5
+        }
+      },
+      {
+        "Neutre": {
+          "min": 0,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Seulement en donjon",
+    "spells": [
+      {
+        "name": "Blopzone",
+        "passif": false,
+        "effect": "Cercle de taille 3 autour du lanceur. Tape les enemies et boost de 1pm les aliés présent dans la zone."
+      }
+    ]
+  },
+  {
+    "_id": 1184,
+    "ankamaId": 1184,
+    "name": "Blop Coco Royal",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1184.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1184-blop-coco-royal",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2400,
+          "max": 3500
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": 94,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -12,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spells": [
+      {
+        "name": "Blovocation",
+        "passif": false,
+        "effect": "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."
+      }
+    ]
+  },
+  {
+    "_id": 1185,
+    "ankamaId": 1185,
+    "name": "Blop Griotte Royal",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1185.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1185-blop-griotte-royal",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2400,
+          "max": 3500
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": 94,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -12,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spells": [
+      {
+        "name": "Blovocation",
+        "passif": false,
+        "effect": "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."
+      }
+    ]
+  },
+  {
+    "_id": 1186,
+    "ankamaId": 1186,
+    "name": "Blop Indigo Royal",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1186.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1186-blop-indigo-royal",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2400,
+          "max": 3500
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": 94,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -12,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spells": [
+      {
+        "name": "Blovocation",
+        "passif": false,
+        "effect": "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."
+      }
+    ]
+  },
+  {
+    "_id": 1187,
+    "ankamaId": 1187,
+    "name": "Blop Reinette Royal",
+    "level": null,
+    "type": "Blops",
+    "imgUrl": "https://s.ankama.com/www/static.ankama.com/dofus/www/game/monsters/200/1187.png",
+    "url": "https://www.dofus.com/fr/mmorpg/encyclopedie/monstres/1187-blop-reinette-royal",
+    "statistics": [
+      {
+        "PV": {
+          "min": 2400,
+          "max": 3500
+        }
+      },
+      {
+        "PA": {
+          "min": 10,
+          "max": null
+        }
+      },
+      {
+        "PM": {
+          "min": 5,
+          "max": null
+        }
+      }
+    ],
+    "resistances": [
+      {
+        "Terre": {
+          "min": 94,
+          "max": null
+        }
+      },
+      {
+        "Air": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Feu": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Eau": {
+          "min": -12,
+          "max": null
+        }
+      },
+      {
+        "Neutre": {
+          "min": -12,
+          "max": null
+        }
+      }
+    ],
+    "monsterType": "Boss",
+    "synergie": [],
+    "spells": [
+      {
+        "name": "Blovocation",
+        "passif": false,
+        "effect": "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."
       }
     ]
   },
@@ -1152,6 +1585,13 @@
       }
     ],
     "monsterType": "Boss",
+    "synergie": [
+      {
+        "ankamaId": 2852,
+        "name": "Boufmouth légendaire",
+        "effect": "Son attaque pousse ses enemies, il peut donc vous pousser contre le Royalmouth ce qui aura pour effect de vous os."
+      }
+    ],
     "spells": [
       {
         "name": "",
@@ -1435,7 +1875,11 @@
     ],
     "monsterType": "Seulement en donjon",
     "synergie": [
-      "Néfileuse"
+      {
+        "ankamaId": 3993,
+        "name": "Néfileuse",
+        "effect": "Transforme un enemie en cocon au cac."
+      }
     ],
     "spells": [
       {
@@ -1514,9 +1958,6 @@
       "Bois des Arak-haï"
     ],
     "monsterType": "Commun",
-    "synergie": [
-      ""
-    ],
     "spells": [
       {
         "name": "Prison de soie",
