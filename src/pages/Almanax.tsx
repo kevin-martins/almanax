@@ -3,7 +3,7 @@ import { filterOptions } from "../api/select";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { createArray, setFilter } from "../features/almanax-slice";
 import { useFetchAlmanaxQuery } from "../features/almanax/almanax-api-slice";
-import { getFilterSearch, getFilterValue } from "../helpers/helpers";
+import { getFilterSearch } from "../helpers/helpers";
 import { FilterSearch } from "../models/filter";
 import Loading from "../components/Loading";
 import Select from "../components/Select";
