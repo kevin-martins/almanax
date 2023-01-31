@@ -77,3 +77,16 @@ export const monsterTypeToIcon = (monsterType: string): string => {
         default: return ""
     }
 }
+
+export const extractBrackedText = (text: string): string[] => {
+    const chunks = []
+    let chunk = ""
+    for (let i: number = 0; i < text.length; i++) {
+        if (text[i] === "[" || text[i - 1] === "]") {
+            chunks.push(chunk)
+            chunk = ""
+        }
+        chunk += text[i]
+    }
+    return chunks
+}
