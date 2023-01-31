@@ -1,10 +1,10 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Home from '../components/Home';
-import Navigation from '../components/Navigation';
-import Almanax from './Almanax';
-import Error404 from './Error404';
-import Forgemagie from './Forgemagie';
-import Monsters from './Monsters';
+import Home from './Home';
+import Navigation from './Navigation';
+import Almanax from '../pages/Almanax';
+import Error404 from '../pages/Error404';
+import Forgemagie from '../pages/Forgemagie';
+import Monsters from '../pages/Monsters';
 
 export const App = () => {
   return (
