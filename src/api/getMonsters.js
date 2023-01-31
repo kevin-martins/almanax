@@ -9,6 +9,15 @@ const MonsterTypes = {
 
 const dataMobs = [
     {
+        ankamaId: 1027,
+        name: "Corailleur Magistral",
+        monsterType: MonsterTypes.Boss,
+        spells: [
+            { name: "", passif: false, effect: "Quand il à plein de pa, il peut taper avec ce sort qui Os." },
+            { name: "", passif: false, effect: "Retire tous ses pm pour gagner plein de pa." },
+        ],
+    },
+    {
         ankamaId: 229,
         name: "Nakunbra",
         monsterType: MonsterTypes.Commun,
