@@ -1,5 +1,6 @@
 import { Text } from "../components/Select";
 import { FilterSearch } from "../models/filter";
+import { MonsterTypes } from "../models/monsters";
 import { HighlightBonusNumbers } from "../models/table";
 
 export const getTextByLanguage = (text: Text[], language: string): string => {
@@ -60,4 +61,19 @@ export const getFilterValue = (currentFilter: FilterSearch, filters: FilterSearc
 
 export const capitalize = (string: string): string => {
     return string[0].toUpperCase() + string.split('').splice(1, string.length).join('')
+}
+
+export const getPath = (path: string, ext: string = ".png"): string => {
+    return process.env.PUBLIC_URL + path + ext
+}
+
+export const monsterTypeToIcon = (monsterType: string): string => {
+    const path = '/assets/icons/'
+    switch (monsterType) {
+        case MonsterTypes.Boss: return getPath(path + 'boss')
+        case MonsterTypes.Commun: return getPath(path + 'commun')
+        case MonsterTypes.Archi: return getPath(path + 'archi-monstre')
+        case MonsterTypes.DungeonOnly: return getPath(path + 'dungeonOnly')
+        default: return ""
+    }
 }
