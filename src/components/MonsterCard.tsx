@@ -1,17 +1,13 @@
 import { getPath } from '../helpers/helpers'
 
-type Props = {
-
-}
-
 const MonsterCard = ({ monster, state }: any) => {
     return (
         <div
-            className='relative w-96 h-60 bg-slate-800 border-2 hover:border-yellow-500 border-gray-900 rounded shadow-lg mx-auto'
+            className='relative'
             onMouseEnter={() => state.setHover(true)}
             onMouseLeave={() => state.setHover(false)}
         >
-            <div className='absolute py-2 px-4 bg-yellow-500 w-max left-1/2 -translate-x-1/2 -top-4 text-center rounded'>
+            <div className='absolute py-2 px-4 bg-yellow-500 w-max left-1/2 -translate-x-1/2 -top-12 text-center rounded'>
                 {/* <img src={monsterTypeToIcon(monster.monsterType)} alt={monster.name} className="absolute left-1/2 -translate-x-1/2 -top-3" /> */}
                 {/* <p>{monster.monsterType}</p> */}
                 <p className='text-xl font-bold'>{monster.name}</p>
