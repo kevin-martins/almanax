@@ -145,7 +145,7 @@ const dataMobs = [
         synergie: [],
         spells: [
             { name: "Étourderie Mortelle", passif: false, effect: "Lancé seulement au 1er tour du combat, poison qui inflige une coco chargé par pa utilisé pendant 2 tours ! Ce sort peut être debuff."},
-            { name: "Immobilisation", passif: false, effect: "-10pm lancé jusuqu'a 6po." },
+            { name: "Immobilisation", passif: false, effect: "-10pm (esquivable) lancé jusuqu'a 6po." },
         ],
     },
     {

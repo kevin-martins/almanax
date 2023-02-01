@@ -70,7 +70,7 @@
       {
         "name": "Immobilisation",
         "passif": false,
-        "effect": "-10pm lancé jusuqu'a 6po."
+        "effect": "-10pm (esquivable) lancé jusuqu'a 6po."
       }
     ]
   },
