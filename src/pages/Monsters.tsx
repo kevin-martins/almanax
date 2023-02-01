@@ -9,10 +9,11 @@ const Monsters = (): JSX.Element => {
         <div className='flex flex-wrap gap-10 max-w-7xl mx-auto mt-20 pb-44'>
             {monsterData.map((monster: any, i: number) => (
                 <Redirection
+                    key={i + Date.now()} 
                     to={'/monster/' + monster.ankamaId}
                     className="border-2 hover:border-yellow-500 w-96 h-60 bg-slate-800 border-slate-800 rounded shadow-lg mx-auto"
                 >
-                    <MonsterCard key={i + Date.now()} monster={monster} state={[hover, setHover]} />
+                    <MonsterCard monster={monster} state={[hover, setHover]} />
                 </Redirection>
             ))}
         </div>
