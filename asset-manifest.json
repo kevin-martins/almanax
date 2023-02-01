@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/almanax/static/css/main.ab2b6bc8.css",
-    "main.js": "/almanax/static/js/main.a1570baf.js",
+    "main.css": "/almanax/static/css/main.c51308c7.css",
+    "main.js": "/almanax/static/js/main.6ed2db48.js",
     "index.html": "/almanax/index.html",
-    "main.ab2b6bc8.css.map": "/almanax/static/css/main.ab2b6bc8.css.map",
-    "main.a1570baf.js.map": "/almanax/static/js/main.a1570baf.js.map"
+    "main.c51308c7.css.map": "/almanax/static/css/main.c51308c7.css.map",
+    "main.6ed2db48.js.map": "/almanax/static/js/main.6ed2db48.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab2b6bc8.css",
-    "static/js/main.a1570baf.js"
+    "static/css/main.c51308c7.css",
+    "static/js/main.6ed2db48.js"
   ]
 }
