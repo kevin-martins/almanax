@@ -2,6 +2,7 @@ import { Text } from "../components/Select";
 import { FilterSearch } from "../models/filter";
 import { MonsterTypes } from "../models/monsters";
 import { HighlightBonusNumbers } from "../models/table";
+import monsters from '../api/keepedMonsters.json'
 
 export const getTextByLanguage = (text: Text[], language: string): string => {
     for (const t of text)
@@ -76,6 +77,13 @@ export const monsterTypeToIcon = (monsterType: string): string => {
         case MonsterTypes.DungeonOnly: return getPath(path + 'dungeonOnly')
         default: return ""
     }
+}
+
+export const getMonsterById = (id: number): void | any => {
+    for (const monster of monsters)
+        if (monster.ankamaId === id)
+            return monster
+    return null
 }
 
 export const extractBrackedText = (text: string): string[] => {

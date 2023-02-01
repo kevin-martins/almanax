@@ -5,6 +5,7 @@ import Almanax from '../pages/Almanax';
 import Error404 from '../pages/Error404';
 import Forgemagie from '../pages/Forgemagie';
 import Monsters from '../pages/Monsters';
+import MonsterInformation from '../pages/monster/[id]';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
           <Route path="/almanax" element={<Almanax />} />
           <Route path="/monsters" element={<Monsters />} />
           <Route path="/forgemagie" element={<Forgemagie />} />
+          <Route path="/monster/:id" element={<MonsterInformation />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
