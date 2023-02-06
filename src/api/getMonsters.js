@@ -7,21 +7,30 @@ const MonsterTypes = {
     Archi: "Archi-monstre"
 }
 
+const Effect = {
+    Boost: "Boost",
+    Rall: "Rall",
+    Os: "Os",
+}
+
 const dataMobs = [
     {
         ankamaId: 1027,
         name: "Corailleur Magistral",
         monsterType: MonsterTypes.Boss,
         spells: [
-            { name: "", passif: false, effect: "Quand il à plein de pa, il peut taper avec ce sort qui Os." },
+            { name: "", passif: false, effect: "Quand il à plein de pa, il peut taper avec ce sort qui Os au cac." },
             { name: "", passif: false, effect: "Retire tous ses pm pour gagner plein de pa." },
         ],
+        effects: [
+            { effect: Effect.Os, ranged: false,  },
+        ]
     },
     {
         ankamaId: 229,
         name: "Nakunbra",
         monsterType: MonsterTypes.Commun,
-        archi: { monsterType: MonsterTypes.Archi, name: "Nakuneuye le Borgne" },
+        archi: { ankamaId: 2538, monsterType: MonsterTypes.Archi, name: "Nakuneuye le Borgne" },
         spells: [
             { name: "Tranchage Mortel", passif: false, effect: "Os si les pdv de la cible sont inférieur où égaux à 50%." },
             { name: "À l'abordage !", passif: true, effect: "gagne 1pm par dommage reçu."},
@@ -49,7 +58,7 @@ const dataMobs = [
         ankamaId: 1181,
         name: "Gloutoblop",
         monsterType: MonsterTypes.Commun,
-        archi: { monsterType: MonsterTypes.Archi, name: "Gloubibou le Gars" },
+        archi: { ankamaId: 2495, monsterType: MonsterTypes.Archi, name: "Gloubibou le Gars" },
         synergie: ["Tronkoblop"],
         spells: [
             { name: "Gloutage", passif: false, effect: "Lançable que au cac et pouvait s'utiliser contre enemies comme aliés, il os la cible pour se buff de 200 hp et 2pm infinie."},
@@ -103,7 +112,7 @@ const dataMobs = [
         ankamaId: 654,
         name: "Champa Bleu",
         monsterType: MonsterTypes.Commun,
-        archi: { monsterType: MonsterTypes.Archi, name: "" },
+        archi: { ankamaId: 2424, monsterType: MonsterTypes.Archi, name: "Champayt l'Odorant" },
         synergie: [],
         spells: [
             { name: "", passif: false, effect: "Os au cac seulement."},
@@ -135,7 +144,7 @@ const dataMobs = [
         archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [""],
         spells: [
-            { name: "", passif: false, effect: "pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"},
+            { name: "", passif: false, effect: "Pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"},
         ],
     },
     {
@@ -160,10 +169,11 @@ const dataMobs = [
         ],
     },
     {
-        ankamaId: 1086,
+        ankamaId: 1072,
         name: "Les Tynrils",
         monsterType: MonsterTypes.Boss,
         synergie: [
+            { ankamaId: 1072, name: "Tynril Consterné", effect: "Os au cac, se cool avec les autres Tynrils" },
             { ankamaId: 1085, name: "Tynril Déconcerté", effect: "Os au cac, se cool avec les autres Tynrils" },
             { ankamaId: 1086, name: "Tynril Perfide", effect: "Os au cac, se cool avec les autres Tynrils" },
             { ankamaId: 1087, name: "Tynril Ahuri", effect: "Os au cac, se cool avec les autres Tynrils" },
@@ -176,7 +186,10 @@ const dataMobs = [
         ankamaId: 651,
         name: "Abrakne Sombre",
         monsterType: MonsterTypes.DungeonOnly,
-        spells: [{ name: "Invocation de Champa Sombre", passif: false, effect: "Invoque un des 4 champa existant. Le [Champa Bleu] os" }],
+        synergie: [],
+        spells: [
+            { name: "Invocation de Champa Sombre", passif: false, effect: "Invoque un des 4 champa existant. Le [Champa Bleu] os" },
+        ],
     },
     {
         ankamaId: 939,
@@ -208,6 +221,7 @@ const dataMobs = [
         name: "Fauchalak",
         monsterType: MonsterTypes.Commun,
         archi: { monsterType: MonsterTypes.Archi, name: "Faufoll la Joyeuse" },
+        synergie: [],
         spells: [
             { name: "Malédiction Koalak", passif: false, effect: "Retire à 3po autour de lui soit (3 à 4pm, 3 à 4pa, 100 esquive pa ou pm, 400 stats élémentaire, 50% crit, 200 dommages, 200 soin)." },
             { name: "Fauche", passif: false, effect: "Os au cac pour vous remplacer par un fantôme de niveau 100." },
@@ -229,6 +243,7 @@ const dataMobs = [
         ankamaId: 3993,
         name: "Néfileuse",
         monsterType: MonsterTypes.Commun,
+        synergie: [],
         spells: [
             { name: "Prison de soie", passif: false, effect: "Transforme un enemie en cocon au cac. Tous les 3 tours" },
             { name: "Toile paralysante", passif: false, effect: "Une sorte de glyphe qui a pour effet: -100pm, -10% res et applique les etats pesanteur et inébranlable." },
@@ -259,6 +274,7 @@ const dataMobs = [
         name: "Trukikol",
         monsterType: MonsterTypes.Commun,
         archi: { monsterType: MonsterTypes.Archi, name: "" },
+        synergie: [],
         spells: [
             { name: "Virevoltage collant", passif: false, effect: "Pose un glyphe de cercle 1 et de distance 3, vous perdez 100pm à l'interieur de celui-ci." },
             { name: "Électromagnétisme", passif: false, effect: "Autour du mob, cercle de taille 4. Vous attire de 3 cases vers les enemies qui vous tappent en ligne." },
@@ -276,6 +292,15 @@ const dataMobs = [
         ankamaId: 3651,
         name: "Phossile",
         monsterType: MonsterTypes.Boss,
+        spells: [
+            { name: "Phorreur de Gloire", passif: true, effect: "Os à 3po autour de lui au tour 5 puis tous les 4 tours." },
+            { name: "Phorce", passif: false, effect: "Jusqu'a 3po, tape 50% des pv érodés." },
+        ],
+    },
+    {
+        ankamaId: 3621,
+        name: "Truchideur",
+        monsterType: MonsterTypes.DungeonOnly,
         spells: [
             { name: "Phorreur de Gloire", passif: true, effect: "Os à 3po autour de lui au tour 5 puis tous les 4 tours." },
             { name: "Phorce", passif: false, effect: "Jusqu'a 3po, tape 50% des pv érodés." },
@@ -302,8 +327,6 @@ fs.readFile('src/api/dataMonsters.json', async (err, data) => {
     const parsedData = JSON.parse(data)
     await parsedData.forEach(async (monster) => {
         const wantedMonster = await getMonsterById(monster.ankamaId, monster.type)
-        // if (wantedMonster.name === "Rat Noir")
-        //     console.log(wantedMonster.found, wantedMonster.data)
         if (wantedMonster.found) {
             const newData = {
                 ...monster,
@@ -311,9 +334,7 @@ fs.readFile('src/api/dataMonsters.json', async (err, data) => {
             }
             delete newData.drops
             createNewMonsterApi.push(newData)
-            // console.log(newData)
-            // console.log("Added \x1b[36m" + newData.name + "\x1b[0m to Database")
-            console.log(newData.url)
+            console.log("Added \x1b[36m" + newData.name + "\x1b[0m to Database")
         }
     })
     // fs.unlinkSync('src/api/keepedMonsters.json');
