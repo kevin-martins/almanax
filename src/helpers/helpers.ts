@@ -1,8 +1,9 @@
 import { Text } from "../components/Select";
 import { FilterSearch } from "../models/filter";
-import { MonsterTypes } from "../models/monsters";
+import { SpellProps, MonsterTypes } from "../models/monsters";
 import { HighlightBonusNumbers } from "../models/table";
-import monsters from '../api/keepedMonsters.json'
+import newDataMonsters from '../api/keepedMonsters.json';
+import dataMonsters from '../api/dataMonsters.json'
 
 export const getTextByLanguage = (text: Text[], language: string): string => {
     for (const t of text)
@@ -64,26 +65,40 @@ export const capitalize = (string: string): string => {
     return string[0].toUpperCase() + string.split('').splice(1, string.length).join('')
 }
 
-export const getPath = (path: string, ext: string = ".png"): string => {
+export const getFile = (path: string, ext: string = ".png"): string => {
     return process.env.PUBLIC_URL + path + ext
 }
 
 export const monsterTypeToIcon = (monsterType: string): string => {
     const path = '/assets/icons/'
     switch (monsterType) {
-        case MonsterTypes.Boss: return getPath(path + 'boss')
-        case MonsterTypes.Commun: return getPath(path + 'commun')
-        case MonsterTypes.Archi: return getPath(path + 'archi-monstre')
-        case MonsterTypes.DungeonOnly: return getPath(path + 'dungeonOnly')
+        case MonsterTypes.Boss: return getFile(path + 'boss')
+        case MonsterTypes.Commun: return getFile(path + 'commun')
+        case MonsterTypes.Archi: return getFile(path + 'archi-monstre')
+        case MonsterTypes.DungeonOnly: return getFile(path + 'dungeonOnly')
         default: return ""
     }
 }
 
-export const getMonsterById = (id: number): void | any => {
-    for (const monster of monsters)
-        if (monster.ankamaId === id)
+export const getNewMonsterById = (id: number): any => {
+    for (const monster of newDataMonsters)
+        if (monster._id === id)
             return monster
-    return null
+    return []
+}
+
+export const getMonsterById = (id: number): any => {
+    for (const monster of dataMonsters)
+        if (monster._id === id)
+            return monster
+    return []
+}
+
+export const getNewMonsterSpellsById = (id: number): any => {
+    for (const monster of newDataMonsters)
+        if (monster._id === id)
+            return monster.spells
+    return []
 }
 
 export const extractBrackedText = (text: string): string[] => {
@@ -96,5 +111,6 @@ export const extractBrackedText = (text: string): string[] => {
         }
         chunk += text[i]
     }
-    return chunks
+    console.log(chunks.length)
+    return chunks.length > 0 ? chunks : [text]
 }
