@@ -8,9 +8,21 @@ const MonsterTypes = {
 }
 
 const Effect = {
-    Boost: "Boost",
-    Rall: "Rall",
-    Os: "Os",
+    Boost: 0,
+    Heal: 1,
+    BlockHeal: 2,
+    Rall: 3,
+    Os: 4,
+    BigDamages: 5,
+    Range: 6,
+    Cac: 7,
+    Invoke: 8,
+    Push: 9,
+    Attract: 10,
+    Teleport: 11,
+    Coop: 12,
+    Invi: 13,
+    Pass: 14,
 }
 
 const dataMobs = [
@@ -18,58 +30,72 @@ const dataMobs = [
         ankamaId: 1027,
         name: "Corailleur Magistral",
         monsterType: MonsterTypes.Boss,
+        synergie: [],
         spells: [
-            { name: "", passif: false, effect: "Quand il à plein de pa, il peut taper avec ce sort qui Os au cac." },
-            { name: "", passif: false, effect: "Retire tous ses pm pour gagner plein de pa." },
+            { effect: Effect.Os, info: "Seulement pendant son boost" },
+            { effect: Effect.Boost, info: "Perd tous ses pm" },
+            { effect: Effect.Cac }
         ],
-        effects: [
-            { effect: Effect.Os, ranged: false,  },
-        ]
     },
     {
         ankamaId: 229,
         name: "Nakunbra",
         monsterType: MonsterTypes.Commun,
         archi: { ankamaId: 2538, monsterType: MonsterTypes.Archi, name: "Nakuneuye le Borgne" },
+        synergie: [],
         spells: [
-            { name: "Tranchage Mortel", passif: false, effect: "Os si les pdv de la cible sont inférieur où égaux à 50%." },
-            { name: "À l'abordage !", passif: true, effect: "gagne 1pm par dommage reçu."},
+            { effect: Effect.Os, info: "Si pdv de la cible <= 50%"},
+            { effect: Effect.Boost, info: "+1pm par coups reçu" },
+            { effect: Effect.Cac},
         ],
     },
     {
         ankamaId: 230,
         name: "Le Chouque",
         monsterType: MonsterTypes.Boss,
+        synergie: [],
         spells: [
-            { name: "Coup de Sabre Maudit", effect: "Applique l'etat 'maudit' au cac qui os si les pdv de la cible sont inférieur où égal à 30%."},
-        ],
+            { effect: Effect.Os, info: "Si pdv de la cible <= 30%" },
+        ]
     },
     {
         ankamaId: 216,
         name: "Gloutovore",
         monsterType: MonsterTypes.DungeonOnly ,
-        synergie: ["Trukikol"],
+        synergie: [
+            {
+                ankamaId: 215,
+                name: "Trukikol",
+                spells: [],
+            },
+        ],
         spells: [
-            { name: "Gobage", passif: false, effect: "Os que les enemies seulement mais jusqu'a 2 fois par tour, il attire sans ldv de 3 cases." },
-            { name: "", passif: true, effect: "Lors de tentative de retrait pm: gagne 15% de regen (infini), tenta retrait pa: gagne 1pm (infini)" },
-        ]
+            { effect: Effect.Os, info: "Que les enemies (2 fois par tour)" },
+            { effect: Effect.Heal, info: "regen 15% hp lors d'une tentative de retrait pm" },
+            { effect: Effect.Boost, info: "+1pm lors d'une tentative de retrait pa" },
+            { effect: Effect.Attract, info: "Attire de 3 cases sans ligne de vue" },
+            { effect: Effect.Cac },
+        ],
     },
     {
         ankamaId: 1181,
         name: "Gloutoblop",
         monsterType: MonsterTypes.Commun,
         archi: { ankamaId: 2495, monsterType: MonsterTypes.Archi, name: "Gloubibou le Gars" },
-        synergie: ["Tronkoblop"],
-        spells: [
-            { name: "Gloutage", passif: false, effect: "Lançable que au cac et pouvait s'utiliser contre enemies comme aliés, il os la cible pour se buff de 200 hp et 2pm infinie."},
+        synergie: [
+            {
+                ankamaId: 1183,
+                name: "Tronkoblop",
+                spells: [
+                    { effect: Effect.Boost, info: "+1pm zone de 3po autour de lui" },
+                    { effect: Effect.Heal, info: "Zone de 3po autour de lui"}
+                ],
+            },
         ],
-    },
-    {
-        ankamaId: 1183,
-        name: "Tronkoblop",
-        monsterType: MonsterTypes.DungeonOnly,
         spells: [
-            { name: "Blopzone", passif: false, effect: "Cercle de taille 3 autour du lanceur. Tape les enemies et boost de 1pm les aliés présent dans la zone."},
+            { effect: Effect.Os, info: "Aliés comme enemies (1 fois par tour)" },
+            { effect: Effect.Boost, info: "Lors d'un os, gagne 200hp et 2pm"},
+            { effect: Effect.Cac },
         ],
     },
     {
@@ -78,7 +104,7 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "Blovocation", passif: false, effect: "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."},
+            { effect: Effect.Invoke, info: "Peut invoquer un [Gloutoblop]"},
         ],
     },
     {
@@ -87,7 +113,7 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "Blovocation", passif: false, effect: "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."},
+            { effect: Effect.Invoke, info: "Peut invoquer un [Gloutoblop]"},
         ],
     },
     {
@@ -96,7 +122,7 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "Blovocation", passif: false, effect: "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."},
+            { effect: Effect.Invoke, info: "Peut invoquer un [Gloutoblop]"},
         ],
     },
     {
@@ -105,7 +131,7 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "Blovocation", passif: false, effect: "Invoque un blop au hasard avec 4.5% de chance d'invoquer un [Gloutoblop]."},
+            { effect: Effect.Invoke, info: "Peut invoquer un [Gloutoblop]"},
         ],
     },
     {
@@ -115,7 +141,8 @@ const dataMobs = [
         archi: { ankamaId: 2424, monsterType: MonsterTypes.Archi, name: "Champayt l'Odorant" },
         synergie: [],
         spells: [
-            { name: "", passif: false, effect: "Os au cac seulement."},
+            { effect: Effect.Os, info: "Au cac" },
+            { effect: Effect.Cac },
         ],
     },
     {
@@ -125,7 +152,8 @@ const dataMobs = [
         archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
-            { name: "Mort Sûre", pasif: false, effect: "Lançable que au cac, il applique un etat qui se charge. Au stade 4, vous êtes os. A déterminer si l'etat est indépendant à chaque Léolhyène ou cumulable entre les Léolhyène. Ce faisait vous pourrez sans doute être os plus rapidement."},
+            { effect: Effect.Os, info: "Etat qui se charge, au stade 4 c'est le os"},
+            { effect: Effect.Cac },
         ],
     },
     {
@@ -134,7 +162,10 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "", passif: true, effect: "Les auto-tamponeuses pouses dès que vous êtes poussé dessus. Si vous êtes dans le cas de figure ou 2 auto-tamponeuses vous pousse l'une vers l'autre et vice versa, vous êtes os." },
+            { effect: Effect.Os, info: "Si poussé à l'infinie entre plusieurs auto-tamponeuses" },
+            { effect: Effect.Attract, info: "Attire de 3 cases en laissant une auto-tamponeuses à votre ancienne position" },
+            { effect: Effect.Push, info: "A son cac et de 3 cases" },
+            { effect: Effect.Invoke, info: "Une auto-tamponeuses lorsqu'il attire un enemie" },
         ],
     },
     {
@@ -142,9 +173,10 @@ const dataMobs = [
         name: "Kaskargo",
         monsterType: MonsterTypes.Commun,
         archi: { monsterType: MonsterTypes.Archi, name: "" },
-        synergie: [""],
+        synergie: [],
         spells: [
-            { name: "", passif: false, effect: "Pose un glyphe sur la case d'arrivée à chaque fois qu'il se tp et peut coop avec ses enemies. Le glyphe en question fait très très mal environ du 3k/4k dmg"},
+            { effect: Effect.BigDamages, info: "Pose des glyphes qui peuvent os"},
+            { effect: Effect.Teleport, info: "Pose un glyphe sur sa case d'arrivée, se tp dans le vide ou coop un enemie" },
         ],
     },
     {
@@ -153,8 +185,8 @@ const dataMobs = [
         monsterType: MonsterTypes.Boss,
         synergie: [],
         spells: [
-            { name: "Étourderie Mortelle", passif: false, effect: "Lancé seulement au 1er tour du combat, poison qui inflige une coco chargé par pa utilisé pendant 2 tours ! Ce sort peut être debuff."},
-            { name: "Immobilisation", passif: false, effect: "-10pm (esquivable) lancé jusuqu'a 6po." },
+            { effect: Effect.Os, info: "Poison pa qui peut très facilement os (se debuff)"},
+            { effect: Effect.Rall, info: "-5 à 6pm à un enemie" },
         ],
     },
     {
@@ -162,10 +194,18 @@ const dataMobs = [
         name: "Royalmouth",
         monsterType: MonsterTypes.Boss,
         synergie: [
-            { ankamaId: 2852, name: "Boufmouth légendaire", effect: "Son attaque pousse ses enemies, il peut donc vous pousser contre le Royalmouth ce qui aura pour effect de vous os." },
+            {
+                ankamaId: 2852,
+                name: "Boufmouth légendaire",
+                spells: [
+                    { effect: Effect.Os, info: "Si vous pousse contre le boss"},
+                    { effect: Effect.Rall, info: "-0 à 2pa en zone" },
+                    { effect: Effect.Push, info: "De x cases" },
+                ],
+            },
         ],
         spells: [
-            { name: "", passif: true, effect: "Os la personne qui lui fait subir des do pou et les personnes qui subissent des do pou contre lui. Attention donc au Boufmouth Légendaire qui peut pousser ! Si il vous pousse contre le boss vous êtes os." },
+            { effect: Effect.Os, info: "La/les personnes qui subissent des do pou à travers lui + la personne qui pousse (si enemie du boss)" },
         ],
     },
     {
@@ -179,7 +219,9 @@ const dataMobs = [
             { ankamaId: 1087, name: "Tynril Ahuri", effect: "Os au cac, se cool avec les autres Tynrils" },
         ],
         spells: [
-            { name: "", passif: false, effect: "Peuvent os au cac et se coop entre-eux ! Prevoyez une certaine distance puisqu'il peuvent donc se déplacer de 8 cases (2pm chacun) en tout si ils coop le Tynril le plus proche de vous." },
+            { effect: Effect.Os, info: "Seulement au cac" },
+            { effect: Effect.Teleport, info: "Se coop entre-eux" },
+            { effect: Effect.Heal, info: "Seulement au cac" },
         ],
     },
     {
@@ -188,7 +230,8 @@ const dataMobs = [
         monsterType: MonsterTypes.DungeonOnly,
         synergie: [],
         spells: [
-            { name: "Invocation de Champa Sombre", passif: false, effect: "Invoque un des 4 champa existant. Le [Champa Bleu] os" },
+            { effect: Effect.Invoke, info: "Peut invoquer un [Champa Bleu]" },
+            { effect: Effect.Teleport, info: "Bond, comme le iop" },
         ],
     },
     {
@@ -196,10 +239,14 @@ const dataMobs = [
         name: "Rat Noir",
         monsterType: MonsterTypes.Boss,
         synergie: [
-            {name: "Rat Molo, invocation du [Rate Atinée]", effect: "jusqu'a 2po, boost de 1pm infinie sans ldv et lançable tous les tours."},
+            {
+                ankamaId: 1,
+                name: "Rat Molo, invocation du [Rate Atinée]",
+                effect: "jusqu'a 2po, boost de 1pm infinie sans ldv et lançable tous les tours",
+            },
         ],
         spells: [
-            { name: "Peste Noire", passif: false, effect: "Tape à hauteur de 50% de ses pv actuel (75% en crit) les personnes qui recoivent du soin en dommage air." },
+            { effect: Effect.BigDamages, info: "50% de ses pv actuel (75% en crit) ceux qui reçoivent du soin" },
             { name: "Kackitu", passif: false, effect: "Cencle de taille 1 autour du Rat Noir, os les personnes qui reçoivent des dommages neutre ou terre. En general il fait ce sort puis tape (dommages terre ou neutre) ce qui à donc pour effet de vous os, évitez d'être a son cac." },
         ],
     },
@@ -208,12 +255,19 @@ const dataMobs = [
         name: "Koulosse",
         monsterType: MonsterTypes.Boss,
         synergie: [
-            { name: "Boufcoul", effect: "Peut rendre invisible ses aliés en zone avec un boost de 5pm."},
+            {
+                ankamaId: 1,
+                name: "Boufcoul",
+                spells: [
+                    { effect: Effect.Invi, info: "En zone" },
+                    { effect: Effect.Boost, info: "+5pm pour ceux qui sont rendu invisible" },
+                ],
+            },
         ],
         spells: [
-            { name: "Souffle du Koulosse", passif: false, effect: "Peut attirer à son cac. Une fois au cac il peut vous transformer en boufcool qui à pour effet de rendre totalement innofensif (-100pa et -100pm)." },
-            { name: "Invocation de Bouftou des cavernes", passif: false, effect: "Invoque un [Bouftou des Cavernes] ou un [Boufcoul] en crit." },
-            { name: "Appel du Koulosse", passif: false, effect: "Lançable en ligne, et jusqu'a 8po, attire les enemies à son cac." },
+            { effect: Effect.Pass, info: "Jusqu'a 5po en ligne seulement" },
+            { effect: Effect.Invoke, info: "Invoque un [Bouftou des Cavernes] qu'il transforme en [Boufcoul]" },
+            { effect: Effect.Attract, info: "Jusqu'a 8po, en ligne seulement, attire à son cac" },
         ],
     },
     {
@@ -223,8 +277,8 @@ const dataMobs = [
         archi: { monsterType: MonsterTypes.Archi, name: "Faufoll la Joyeuse" },
         synergie: [],
         spells: [
-            { name: "Malédiction Koalak", passif: false, effect: "Retire à 3po autour de lui soit (3 à 4pm, 3 à 4pa, 100 esquive pa ou pm, 400 stats élémentaire, 50% crit, 200 dommages, 200 soin)." },
-            { name: "Fauche", passif: false, effect: "Os au cac pour vous remplacer par un fantôme de niveau 100." },
+            { effect: Effect.Os, info: "Au cac" },
+            { effect: Effect.Rall, info: "3po autour de lui un des malus suivant: -3 à 4pm, -3 à 4pa, -100 esquive pa ou pm, -400 stats élémentaire, -50% crit, -200 dommages, -200 soin" },
         ],
     },
     {
@@ -232,11 +286,14 @@ const dataMobs = [
         name: "Arapex",
         monsterType: MonsterTypes.DungeonOnly,
         synergie: [
-            { ankamaId: 3993, name: "Néfileuse", effect: "Transforme un enemie en cocon au cac." },
+            {
+                ankamaId: 3993,
+                name: "Néfileuse",
+                // effect: "Transforme un enemie en cocon au cac.",
+            },
         ],
         spells: [
-            { name: "Exécution", passif: false, effect: "Os les enemies ayant l'etat cocon lancé par la [Néfileuse]." },
-            { name: "Fauche", passif: false, effect: "Os au cac pour vous remplacer par un fantôme de niveau 100." },
+            { effect: Effect.Os, info: "Si dans l'etat cocon lancé par la [Néfileuse]" },
         ],
     },
     {
@@ -245,8 +302,8 @@ const dataMobs = [
         monsterType: MonsterTypes.Commun,
         synergie: [],
         spells: [
-            { name: "Prison de soie", passif: false, effect: "Transforme un enemie en cocon au cac. Tous les 3 tours" },
-            { name: "Toile paralysante", passif: false, effect: "Une sorte de glyphe qui a pour effet: -100pm, -10% res et applique les etats pesanteur et inébranlable." },
+            { effect: Effect.Pass, info: "-100pa et pm, transforme en cocon, seulement au cac (3 tours)" },
+            { effect: Effect.Rall, info: "Glyphe: -100pm, -10% res, etats pesanteur et inébranlable." },
         ],
     },
     {
@@ -254,9 +311,14 @@ const dataMobs = [
         name: "Mama Koalak",
         monsterType: MonsterTypes.Commun,
         archi: { monsterType: MonsterTypes.Archi, name: "Mamakomou l'Âge" },
-        synergie: [],
+        synergie: [
+            {
+                ankamaId: 785,
+                name: "Koalak Forestier",
+            }
+        ],
         spells: [
-            { name: "Accouchement", passif: false, effect: "Invoque un koalak, 10% chance d'invoquer un [Koalak Forestier]."},
+            { effect: Effect.Invoke, info: "Peut invoquer un [Koalak Forestier]."},
         ],
     },
     {
@@ -266,7 +328,7 @@ const dataMobs = [
         archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
-            { name: "", passif: false, effect: "Transforme en buisson au cac (-100pa et -100pm)." },
+            { effect: Effect.Pass, info: "-100pa et pm, transforme en buisson, seulement au cac" },
         ]
     },
     {
@@ -276,41 +338,83 @@ const dataMobs = [
         archi: { monsterType: MonsterTypes.Archi, name: "" },
         synergie: [],
         spells: [
-            { name: "Virevoltage collant", passif: false, effect: "Pose un glyphe de cercle 1 et de distance 3, vous perdez 100pm à l'interieur de celui-ci." },
-            { name: "Électromagnétisme", passif: false, effect: "Autour du mob, cercle de taille 4. Vous attire de 3 cases vers les enemies qui vous tappent en ligne." },
+            { effect: Effect.Rall, info: "Glyphe de cercle 1 et de distance 3: -100pm" },
+            { effect: Effect.Attract, info: "4po autour du mob, Vous attire de 3 cases vers les enemies qui vous tappent en ligne" },
         ],
     },
     {
         ankamaId: 3482,
         name: "Dramak",
         monsterType: MonsterTypes.DungeonOnly,
+        synergie: [],
         spells: [
-            { name: "", passif: false, effect: "Transforme en marionette au cac, ce qui a pour effet de vous retirer 100pa et 100pm pour le tour." },
+            { effect: Effect.Pass, info: "-100pa et -100pm, transforme en marionette, seulement au cac" },
+            { effect: Effect.Invoke },
         ],
     },
     {
         ankamaId: 3651,
         name: "Phossile",
         monsterType: MonsterTypes.Boss,
+        synergie: [
+            {
+                ankamaId: 1,
+                name: "",
+                // peut invu distance
+            }
+        ],
         spells: [
-            { name: "Phorreur de Gloire", passif: true, effect: "Os à 3po autour de lui au tour 5 puis tous les 4 tours." },
-            { name: "Phorce", passif: false, effect: "Jusqu'a 3po, tape 50% des pv érodés." },
+            { effect: Effect.Os, info: "3po autour de lui au tour 5 puis tous les 4 tours" },
+            { effect: Effect.BigDamages, info: "Jusqu'a 3po, 50% des pv érodés" },
+            { effect: Effect.Teleport },
         ],
     },
     {
         ankamaId: 3621,
         name: "Truchideur",
         monsterType: MonsterTypes.DungeonOnly,
+        synergie: [],
         spells: [
-            { name: "Phorreur de Gloire", passif: true, effect: "Os à 3po autour de lui au tour 5 puis tous les 4 tours." },
-            { name: "Phorce", passif: false, effect: "Jusqu'a 3po, tape 50% des pv érodés." },
+            { effect: Effect.BlockHeal, info: "à distance" },
+            { effect: Effect.Rall, info: "-40%hp max et jusqu'a 60% en crit" },
+            { effect: Effect.Range },
         ],
     },
+    {
+        ankamaId: 1045,
+        name: "Kimbo",
+        monsterType: MonsterTypes.Boss,
+        synergie: [
+            {
+                ankamaId: 1088,
+                name: "Disciple du Kimbo",
+                spells: [
+                    { effect: Effect.Os, info: "Glyphe qui os, cases pairs: sorts terre et eau, cases impairs: sorts air et feu en fonction de la position du Disciple" }
+                ]
+            },
+        ],
+        spells: [
+            { effect: Effect.Push, info: "de 2 cases, au cac seulement" },
+            { effect: Effect.Invoke, info: "Invoque un [Disciple du Kimbo]"}
+        ]
+    },
+    {
+        ankamaId: 3854,
+        name: "Gromorso",
+        monsterType: MonsterTypes.Commun,
+        synergie: [],
+        spells: [
+            { effect: Effect.Os, info: "au cac" },
+        ],
+    }
     // truchideur: à 11pa peut presque os et s'il est boosté tape très fort
-]
-const mobsThatBoosts = ["Chiendent", "Abrakleur Clair"]
+    // Poutch (si boosté pa)
+    // Kilibris
+    // flib
 
-const getMonsterById = async (monsterId, monsterType) => {
+]
+
+const getNewMonsterById = async (monsterId, monsterType) => {
     const types = ["Invocations de classe", "Monstres de quête", "Tourelles"]
     for (const type of types)
         if (monsterType.includes(type))
@@ -326,15 +430,17 @@ fs.readFile('src/api/dataMonsters.json', async (err, data) => {
     const createNewMonsterApi = []
     const parsedData = JSON.parse(data)
     await parsedData.forEach(async (monster) => {
-        const wantedMonster = await getMonsterById(monster.ankamaId, monster.type)
+        const wantedMonster = await getNewMonsterById(monster.ankamaId, monster.type)
         if (wantedMonster.found) {
             const newData = {
                 ...monster,
                 ...wantedMonster.data,
             }
+            delete newData.imgUrl
+            delete newData.url
             delete newData.drops
             createNewMonsterApi.push(newData)
-            console.log("Added \x1b[36m" + newData.name + "\x1b[0m to Database")
+            console.log("Added \x1b[34m" + newData.name + "\x1b[0m to Database")
         }
     })
     // fs.unlinkSync('src/api/keepedMonsters.json');
