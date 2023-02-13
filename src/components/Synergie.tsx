@@ -35,19 +35,21 @@ export const Synergie = (data: SynergieProps) => {
               alt={"pas encore d'image pour: " + oldApiMonster.name}
               className='mx-auto transform scale-125 p-5'
             />
-            <ul className='flex ml-auto w-full'>
+            <ul className='flex m-auto'>
               {oldApiMonster.statistics.map((statistic: any, i: number) => {
                 const currentElement = Object.keys(statistic)[0]
                 const min = statistic[currentElement].min
                 const max = statistic[currentElement].max
                 return (
-                  <li key={i + Date.now()} className='ml-3'>{currentElement} : {max === null ? min : `${min} à ${max}`}</li>
+                  <li key={i + Date.now()} className='relative ml-3 m-auto'>
+                    <img src={getFile(`/assets/icons/${currentElement.toLowerCase()}`, "webp")} alt={`${currentElement}`} className="mx-auto" />
+                    <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-lg">{max === null ? min : `${min} ${max}`}</span>
+                  </li>
                 )
               })}
-            </ul>
+          </ul>
           </div>
-          <section className='text-left mr-auto'>
-            <p>Resistances :</p>
+          <section className='text-left mr-auto mt-5'>
             <ul>
               {oldApiMonster.resistances.map((resistance: any, i: number) => {
                 const currentElement = Object.keys(resistance)[0]
@@ -55,15 +57,15 @@ export const Synergie = (data: SynergieProps) => {
                 const max = resistance[currentElement].max
                 return (
                   <li key={i + Date.now()} className="ml-2 flex">
-                    <img src={getFile(`/assets/icons/${currentElement.toLowerCase()}`)} alt={`${currentElement}`} className="w-10 h-10 p-1" />
-                    <span className="ml-2 my-auto">{max === null ? min : `${min} à ${max}`}</span>
+                    <img src={getFile(`/assets/icons/${currentElement.toLowerCase()}`, "webp")} alt={`${currentElement}`} className="w-10 h-10 p-1" />
+                    <span className="ml-2 my-auto font-bold text-lg">{max === null ? min : `${min} à ${max}`}%</span>
                   </li>
                 )
               })}
             </ul>
           </section>
         </div>
-        {data.spells?.length > 0 ? data.spells.map((spell: SpellProps) => (
+        {data.spells?.length > 0 ?data.spells.map((spell: SpellProps) => (
           <MonsterSpell {...spell} />
         )) : getNewMonsterSpellsById(data.ankamaId).map((spell: SpellProps) => (
           <MonsterSpell {...spell} />
