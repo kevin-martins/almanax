@@ -19,10 +19,12 @@ const Effect = {
     Invoke: 8,
     Push: 9,
     Attract: 10,
-    Teleport: 11,
-    Coop: 12,
-    Invi: 13,
-    Pass: 14,
+    GetCloser: 11,
+    Teleport: 12,
+    Coop: 13,
+    Invi: 14,
+    Pass: 15,
+    Invu: 16,
 }
 
 const dataMobs = [
@@ -206,17 +208,64 @@ const dataMobs = [
         ],
         spells: [
             { effect: Effect.Os, info: "La/les personnes qui subissent des do pou à travers lui + la personne qui pousse (si enemie du boss)" },
+            { effect: Effect.Invoke, info: "Peut invoquer un [Boufmouth légendaire]" },
+            { effect: Effect.Attract, info: "Attire de 2 cases en ligne autour de lui" },
+            { effect: Effect.Invu, info: "Le pousser sans lui faire subir de do pou" },
         ],
     },
     {
         ankamaId: 1072,
-        name: "Les Tynrils",
+        name: "Tynrils Consterné",
         monsterType: MonsterTypes.Boss,
         synergie: [
-            { ankamaId: 1072, name: "Tynril Consterné", effect: "Os au cac, se cool avec les autres Tynrils" },
-            { ankamaId: 1085, name: "Tynril Déconcerté", effect: "Os au cac, se cool avec les autres Tynrils" },
-            { ankamaId: 1086, name: "Tynril Perfide", effect: "Os au cac, se cool avec les autres Tynrils" },
-            { ankamaId: 1087, name: "Tynril Ahuri", effect: "Os au cac, se cool avec les autres Tynrils" },
+            { ankamaId: 1085, name: "Tynril Déconcerté", spells: [] },
+            { ankamaId: 1086, name: "Tynril Perfide", spells: [] },
+            { ankamaId: 1087, name: "Tynril Ahuri", spells: [] },
+        ],
+        spells: [
+            { effect: Effect.Os, info: "Seulement au cac" },
+            { effect: Effect.Teleport, info: "Se coop entre-eux" },
+            { effect: Effect.Heal, info: "Seulement au cac" },
+        ],
+    },
+    {
+        ankamaId: 1085,
+        name: "Tynrils Déconcerté",
+        monsterType: MonsterTypes.Boss,
+        synergie: [
+            { ankamaId: 1072, name: "Tynril Consterné", spells: [] },
+            { ankamaId: 1086, name: "Tynril Perfide", spells: [] },
+            { ankamaId: 1087, name: "Tynril Ahuri", spells: [] },
+        ],
+        spells: [
+            { effect: Effect.Os, info: "Seulement au cac" },
+            { effect: Effect.Teleport, info: "Se coop entre-eux" },
+            { effect: Effect.Heal, info: "Seulement au cac" },
+        ],
+    },
+    {
+        ankamaId: 1086,
+        name: "Tynrils Perfide",
+        monsterType: MonsterTypes.Boss,
+        synergie: [
+            { ankamaId: 1072, name: "Tynril Consterné", spells: [] },
+            { ankamaId: 1085, name: "Tynril Déconcerté", spells: [] },
+            { ankamaId: 1087, name: "Tynril Ahuri", spells: [] },
+        ],
+        spells: [
+            { effect: Effect.Os, info: "Seulement au cac" },
+            { effect: Effect.Teleport, info: "Se coop entre-eux" },
+            { effect: Effect.Heal, info: "Seulement au cac" },
+        ],
+    },
+    {
+        ankamaId: 1087,
+        name: "Tynrils Ahuri",
+        monsterType: MonsterTypes.Boss,
+        synergie: [
+            { ankamaId: 1072, name: "Tynril Consterné", spells: [] },
+            { ankamaId: 1085, name: "Tynril Déconcerté", spells: [] },
+            { ankamaId: 1086, name: "Tynril Perfide", spells: [] },
         ],
         spells: [
             { effect: Effect.Os, info: "Seulement au cac" },
@@ -228,7 +277,13 @@ const dataMobs = [
         ankamaId: 651,
         name: "Abrakne Sombre",
         monsterType: MonsterTypes.DungeonOnly,
-        synergie: [],
+        synergie: [
+            {
+                ankamaId: 654,
+                name: "Champa Bleu",
+                spells: [],
+            }
+        ],
         spells: [
             { effect: Effect.Invoke, info: "Peut invoquer un [Champa Bleu]" },
             { effect: Effect.Teleport, info: "Bond, comme le iop" },
@@ -247,7 +302,7 @@ const dataMobs = [
         ],
         spells: [
             { effect: Effect.BigDamages, info: "50% de ses pv actuel (75% en crit) ceux qui reçoivent du soin" },
-            { name: "Kackitu", passif: false, effect: "Cencle de taille 1 autour du Rat Noir, os les personnes qui reçoivent des dommages neutre ou terre. En general il fait ce sort puis tape (dommages terre ou neutre) ce qui à donc pour effet de vous os, évitez d'être a son cac." },
+            { effect: Effect.Os, info: "Autour du Rat Noir, cercle de 1 cases, os les personnes qui reçoivent des dommages neutre ou terre." },
         ],
     },
     {
@@ -294,6 +349,7 @@ const dataMobs = [
         ],
         spells: [
             { effect: Effect.Os, info: "Si dans l'etat cocon lancé par la [Néfileuse]" },
+            { effect: Effect.GetCloser, info: "S'attire sur vous en ligne" }
         ],
     },
     {
@@ -303,7 +359,8 @@ const dataMobs = [
         synergie: [],
         spells: [
             { effect: Effect.Pass, info: "-100pa et pm, transforme en cocon, seulement au cac (3 tours)" },
-            { effect: Effect.Rall, info: "Glyphe: -100pm, -10% res, etats pesanteur et inébranlable." },
+            { effect: Effect.Invoke, info: "Invoque une toile d'araigné, cercle de 2 cases, -100pm, -10% res, etats pesanteur et inébranlable, l'invocation peut être tué" },
+            { effect: Effect.Attract, info: "Vous attire a son cac" },
         ],
     },
     {
@@ -315,6 +372,7 @@ const dataMobs = [
             {
                 ankamaId: 785,
                 name: "Koalak Forestier",
+                spells: [],
             }
         ],
         spells: [
@@ -349,7 +407,8 @@ const dataMobs = [
         synergie: [],
         spells: [
             { effect: Effect.Pass, info: "-100pa et -100pm, transforme en marionette, seulement au cac" },
-            { effect: Effect.Invoke },
+            { effect: Effect.Invoke, info: "des marionnettes" },
+            { effect: Effect.Invu, info: "" },
         ],
     },
     {
@@ -366,7 +425,7 @@ const dataMobs = [
         spells: [
             { effect: Effect.Os, info: "3po autour de lui au tour 5 puis tous les 4 tours" },
             { effect: Effect.BigDamages, info: "Jusqu'a 3po, 50% des pv érodés" },
-            { effect: Effect.Teleport },
+            { effect: Effect.Teleport, info: "sur une petite distance" },
         ],
     },
     {
@@ -376,7 +435,7 @@ const dataMobs = [
         synergie: [],
         spells: [
             { effect: Effect.BlockHeal, info: "à distance" },
-            { effect: Effect.Rall, info: "-40%hp max et jusqu'a 60% en crit" },
+            { effect: Effect.Rall, info: "-40%hp max et jusqu'a 60% en crit, 2 à 3 tours" },
             { effect: Effect.Range },
         ],
     },
@@ -389,13 +448,14 @@ const dataMobs = [
                 ankamaId: 1088,
                 name: "Disciple du Kimbo",
                 spells: [
-                    { effect: Effect.Os, info: "Glyphe qui os, cases pairs: sorts terre et eau, cases impairs: sorts air et feu en fonction de la position du Disciple" }
+                    { effect: Effect.Os, info: "Glyphe qui os, cases impaires : sorts terre et eau, cases paires : sorts air et feu en fonction de sa position" }
                 ]
             },
         ],
         spells: [
             { effect: Effect.Push, info: "de 2 cases, au cac seulement" },
-            { effect: Effect.Invoke, info: "Invoque un [Disciple du Kimbo]"}
+            { effect: Effect.Invoke, info: "Invoque un [Disciple du Kimbo]"},
+            { effect: Effect.Invu, info: "Delock: taper dans une pair d'élément au choix (air et feu ou terre et eau), positionnez le [Kimbo] sur une des glyphe pour retirere ses résistances " }
         ]
     },
     {
@@ -406,11 +466,66 @@ const dataMobs = [
         spells: [
             { effect: Effect.Os, info: "au cac" },
         ],
-    }
+    },
+    {
+        ankamaId: 1070,
+        name: "Kilibris",
+        monsterType: MonsterTypes.Commun,
+        synergie: [],
+        spells: [
+            { effect: Effect.Pass, info: "Fais passer un tour enemie, au cac" },
+            { effect: Effect.Teleport, info: "Bond sur une grande distance" },
+        ],
+    },
+    {
+        ankamaId: 1050,
+        name: "Le Flib",
+        monsterType: MonsterTypes.Commun,
+        synergie: [],
+        spells: [
+            { effect: Effect.Pass, info: "Fais passer un tour enemie, au cac" },
+        ],
+    },
+    {
+        ankamaId: 1077,
+        name: "Abrakleur Sombre",
+        monsterType: MonsterTypes.Commun,
+        synergie: [
+            {
+                ankamaId: 1029,
+                name: "Floribonde",
+                spells: [],
+            },
+        ],
+        spells: [
+            { effect: Effect.BigDamages, info: "Si tape une cible ayant reçu le malus faiblesse de la [Floribonde]" },
+            { effect: Effect.Boost, info: "Augmente sa puissance" },
+        ]
+    },
+    {
+        ankamaId: 1029,
+        name: "Floribonde",
+        monsterType: MonsterTypes.Commun,
+        synergie: [
+            {
+                ankamaId: 1077,
+                name: "Abrakleur Sombre",
+                spells: [],
+            },
+            {
+                ankamaId: 1074,
+                name: "Nerbe",
+                spells: [
+                    { effect: Effect.BigDamage, info: "10 à 15% (21 à 30% en crit) des hp de l'attaquant" }
+                ],
+            },
+        ],
+        spells: [
+            { effect: Effect.Rall, info: "-50% res all pour 1 tour, -100 en crit" },
+        ]
+    },
     // truchideur: à 11pa peut presque os et s'il est boosté tape très fort
     // Poutch (si boosté pa)
-    // Kilibris
-    // flib
 
 ]
 
@@ -419,11 +534,15 @@ const getNewMonsterById = async (monsterId, monsterType) => {
     for (const type of types)
         if (monsterType.includes(type))
             return { found: false, data: {} }
-    for (const dataMob of dataMobs)
+    for (const dataMob of dataMobs) {
+        // console.log(dataMob.name)
         if (dataMob.ankamaId === monsterId)
             return { found: true, data: dataMob }
+    }
     return { found: false, data: {} }
 }
+
+fs.unlinkSync('src/api/keepedMonsters.json');
 
 fs.readFile('src/api/dataMonsters.json', async (err, data) => {
     if (err) throw err;
@@ -443,7 +562,6 @@ fs.readFile('src/api/dataMonsters.json', async (err, data) => {
             console.log("Added \x1b[34m" + newData.name + "\x1b[0m to Database")
         }
     })
-    // fs.unlinkSync('src/api/keepedMonsters.json');
     fs.appendFile('src/api/keepedMonsters.json', JSON.stringify(createNewMonsterApi, null, 2), (err) => {
         if (err) throw err;
         console.log('Api created !');
