@@ -22,9 +22,8 @@ export const Synergie = (data: SynergieProps) => {
         className='relative text-yellow-500 text-lg font-bold cursor-pointer'
       >
         {data.name}
-      </span>
-      
-      {(hover || stay) && <section className="absolute z-50 bg-gray-900 py-2 px-4 top-20">
+      </span> 
+      {(hover || stay) && <section className="absolute z-50 bg-gray-900/90 py-2 px-4 top-20 rounded-lg ml-2">
         <div className='flex w-full'>
           <p className='text-2xl font-bold text-center text-yellow-500 mx-auto'>{oldApiMonster.name}</p>
           <button className='text-red-300 hover:text-red-600 text-xl font-bold ml-auto' onClick={() => setStay(false)}>x</button>
@@ -64,7 +63,7 @@ export const Synergie = (data: SynergieProps) => {
             </ul>
           </section>
         </div>
-        {data.spells.length > 0 ? data.spells.map((spell: SpellProps) => (
+        {data.spells?.length > 0 ? data.spells.map((spell: SpellProps) => (
           <MonsterSpell {...spell} />
         )) : getNewMonsterSpellsById(data.ankamaId).map((spell: SpellProps) => (
           <MonsterSpell {...spell} />
