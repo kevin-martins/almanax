@@ -65,8 +65,8 @@ export const capitalize = (string: string): string => {
     return string[0].toUpperCase() + string.split('').splice(1, string.length).join('')
 }
 
-export const getFile = (path: string, ext: string = ".png"): string => {
-    return process.env.PUBLIC_URL + path + ext
+export const getFile = (path: string, ext: string = "png"): string => {
+    return process.env.PUBLIC_URL + path + "." + ext
 }
 
 export const monsterTypeToIcon = (monsterType: string): string => {
