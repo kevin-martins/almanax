@@ -19,10 +19,12 @@ export enum Effect {
     Invoke,
     Push,
     Attract,
+    GetCloser,
     Teleport,
     Coop,
     Invi,
     Pass,
+    Invu,
 }
 
 export type SpellProps = {
