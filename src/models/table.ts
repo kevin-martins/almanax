@@ -1,10 +1,9 @@
 export type TableHead = {
-    fr: string,
-    en: string,
+    title: string,
     className: string,
 }
 
-export type HighlightBonusNumbers = {
+export type HighlightPercentageProps = {
     text: string,
-    isNumber: boolean,
+    shouldHighlight: boolean,
 }
