@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import monsterData from '../api/keepedMonsters.json'
+import monsterData from '../create-api/keepedMonsters.json'
 import MonsterCard from '../components/MonsterCard'
 import Redirection from '../components/Redirection'
 

@@ -1,5 +1,5 @@
 import Card from './Card'
-import { cardOptions } from '../api/cards'
+import { cardOptions } from '../constants/cards'
 import { CardProps } from '../models/card'
 
 const Home = () => {
