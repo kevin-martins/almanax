@@ -3,10 +3,9 @@ import { AlmanaxProps } from '../../models/almanax'
 import { TableHead } from '../../models/table'
 import Head from './Head'
 import Cell from './Cell'
-import { FilterSearch } from '../../models/filter'
 
 export const Table = (): JSX.Element => {
-  const { filters, almanax } = useAppSelector(state => state.dofus)
+  const { currentFilter, almanax } = useAppSelector(state => state.dofus)
 
   const tableHeaders: TableHead[] = [
     { title: "Dates", className: "w-2/12 text-center" },
@@ -27,13 +26,10 @@ export const Table = (): JSX.Element => {
           </tr>
         </thead>
         <tbody>
-          {/* {data.map((cell: AlmanaxProps, i: number) => (
-            <Cell key={i} cell={cell} dataLength={data.length} index={i} />
-          ))} */}
           {almanax
-            // .filter((cell: AlmanaxProps) => (
-            //   filter === FilterSearch.None || filter === cell.filterSearch
-            // ))
+            .filter((cell: AlmanaxProps) => (
+              currentFilter === cell.filterSearch || currentFilter === "Aucun"
+            ))
             .map((cell: AlmanaxProps, i: number) => (
               <Cell key={i} cell={cell} dataLength={almanax.length} index={i} />
             ))

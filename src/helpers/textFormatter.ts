@@ -6,7 +6,7 @@ export const capitalize = (string: string): string => {
 
 export const highlightPercentages = (text: string): HighlightPercentageProps[] => {
     const splitedText = text.split(/(\d+%)/g)
-    console.log(splitedText)
+
     if (splitedText.length === 0) return [{ text: text, shouldHighlight: false }]
     return splitedText.map((text: string) => {
         if (text.includes('%')) {

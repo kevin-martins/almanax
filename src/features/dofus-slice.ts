@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AlmanaxProps } from '../models/almanax'
-import { FilterSearch } from '../models/filter'
 
 interface Dofus {
   isLoading: boolean,
   days: number,
   almanax: AlmanaxProps[],
-  filters: string[],
+  filtersOptions: string[],
+  currentFilter: string,
 }
 
 const initialState: Dofus = {
   isLoading: true,
-  days: 40,
+  days: 15,
   almanax: [],
-  filters: []
+  filtersOptions: [],
+  currentFilter: "Aucun",
 }
 
 const almanaxSlice = createSlice({
@@ -23,8 +24,12 @@ const almanaxSlice = createSlice({
     setDays(state, action: PayloadAction<number>) {
       state.days = action.payload
     },
-    setFilters(state, action: PayloadAction<string[]>) {
-      state.filters = action.payload
+    setFiltersOptions(state, action: PayloadAction<string[]>) {
+      state.filtersOptions = ["Aucun", ...action.payload]
+      // state.filtersOptions = 
+    },
+    setCurrentFilter(state, action: PayloadAction<string>) {
+      state.currentFilter = action.payload
     },
     setAlmanax(state, action: PayloadAction<AlmanaxProps[]>) {
       state.almanax = action.payload
@@ -37,7 +42,8 @@ const almanaxSlice = createSlice({
 
 export const {
   setDays,
-  setFilters,
+  setFiltersOptions,
+  setCurrentFilter,
   setAlmanax,
   setLoading,
 } = almanaxSlice.actions

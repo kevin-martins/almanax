@@ -4,12 +4,13 @@ import Loading from "../components/Loading";
 import Select from "../components/Select";
 import Table from "../components/Table/Table";
 import Almanax from '../api/almanax.json'
-import { setAlmanax, setFilters, setLoading } from "../features/dofus-slice";
+import { setAlmanax, setCurrentFilter, setDays, setFiltersOptions, setLoading } from "../features/dofus-slice";
 import { getDateInterval } from "../helpers/dateManipulation";
 import { AlmanaxProps } from "../models/almanax";
+import { getUniqueString } from "../helpers/utils";
 
 export const Dofus = () => {
-  const { isLoading, days } = useAppSelector(state => state.dofus)
+  const { isLoading, days, filtersOptions, currentFilter } = useAppSelector(state => state.dofus)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -21,7 +22,8 @@ export const Dofus = () => {
       .then(res => {
         const definedValues = res.filter(r => r !== undefined) as AlmanaxProps[]
         dispatch(setAlmanax(definedValues))
-        // dispatch(setFilters(res.))
+        const filterSearchs = definedValues.map(value => value.filterSearch)
+        dispatch(setFiltersOptions(getUniqueString(filterSearchs)))
         dispatch(setLoading(false))
       })
   }, [days])
@@ -29,11 +31,16 @@ export const Dofus = () => {
   return (
     <div className="h-full bg-gray-800">
       <div className="w-full text-center">
-        {/* <Select
-          currentValue={filterSelected}
-          options={filterOptions}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {dispatch(setFilter(parseInt(e.target.value) as FilterSearch))}}
-        /> */}
+        <Select
+          currentValue={currentFilter}
+          options={filtersOptions}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {dispatch(setCurrentFilter(e.target.value))}}
+        />
+        <Select
+          currentValue={days.toString()}
+          options={["15", "30", "45", "60", "365"]}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {dispatch(setDays(parseInt(e.target.value)))}}
+        />
       </div>
       {isLoading ? <Loading /> : <Table />}
     </div>
