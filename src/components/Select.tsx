@@ -1,11 +1,6 @@
-type Option = {
-  value: string,
-  text: string,
-}
-
 type Props = {
   currentValue: string,
-  options: Option[],
+  options: string[],
   onChange: any,
 }
 
@@ -16,13 +11,13 @@ export const Select = ({ currentValue, options, onChange }: Props) => {
       onChange={onChange}
       className="outline-none bg-gray-700 shadow-2xl text-yellow-500 p-2 text-lg mt-5"
     >
-      {options.map((option: Option, i: number) => (
+      {options.map((text: string, i: number) => (
         <option
-          key={i + Date.now()}
-          value={option.value}
+          key={i}
+          value={text}
           className="bg-gray-700"
         >
-          {option.text}
+          {text}
         </option>
       ))}
     </select>
