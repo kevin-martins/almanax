@@ -1,0 +1,746 @@
+[
+    {
+        "name": "pa",
+        "poids": 1,
+        "max": 1,
+        "upgrades": [
+            {
+                "abbreviation": "ga pa",
+                "poids": 100
+            }
+        ]
+    },
+    {
+        "name": "pm",
+        "poids": 1,
+        "max": 1,
+        "upgrades": [
+            {
+                "abbreviation": "ga pm",
+                "poids": 90
+            }
+        ]
+    },
+    {
+        "name": "porté",
+        "poids": 1,
+        "max": 1,
+        "upgrades": [
+            {
+                "abbreviation": "po",
+                "poids": 51
+            }
+        ]
+    },
+    {
+        "name": "invocation",
+        "poids": 1,
+        "max": 3,
+        "upgrades": [
+            {
+                "abbreviation": "invo",
+                "poids": 30
+            }
+        ]
+    },
+    {
+        "name": "dommage",
+        "poids": 1,
+        "max": 5,
+        "upgrades": [
+            {
+                "abbreviation": "do",
+                "poids": 20
+            }
+        ]
+    },
+    {
+        "name": "% dommages armes",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "do per ar",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "% dommages distance",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "do per di",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "% dommages mêlée",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "do per mé",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "% dommages aux sorts",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "do per so",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "% résistance distance",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "ré per di",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "% résistance mêlée",
+        "poids": 1,
+        "max": 6,
+        "upgrades": [
+            {
+                "abbreviation": "ré per mé",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "soin",
+        "poids": 1,
+        "max": 10,
+        "upgrades": [
+            {
+                "abbreviation": "so",
+                "poids": 10
+            },
+            {
+                "abbreviation": "pa so",
+                "poids": 30
+            }
+        ]
+    },
+    {
+        "name": "critique",
+        "poids": 1,
+        "max": 10,
+        "upgrades": [
+            {
+                "abbreviation": "cri",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "renvoi de dommage",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do ren",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "retrait pm",
+        "poids": 1,
+        "max": 14,
+        "upgrades": [
+            {
+                "abbreviation": "ret pm",
+                "poids": 7
+            },
+            {
+                "abbreviation": "pa ret pm",
+                "poids": 21
+            }
+        ]
+    },
+    {
+        "name": "retrait pa",
+        "poids": 1,
+        "max": 14,
+        "upgrades": [
+            {
+                "abbreviation": "ret pa",
+                "poids": 7
+            },
+            {
+                "abbreviation": "pa ret pa",
+                "poids": 21
+            }
+        ]
+    },
+    {
+        "name": "esquive pm",
+        "poids": 1,
+        "max": 14,
+        "upgrades": [
+            {
+                "abbreviation": "ré pm",
+                "poids": 7
+            },
+            {
+                "abbreviation": "pa ré pm",
+                "poids": 21
+            }
+        ]
+    },
+    {
+        "name": "esquive pa",
+        "poids": 1,
+        "max": 14,
+        "upgrades": [
+            {
+                "abbreviation": "ré pa",
+                "poids": 7
+            },
+            {
+                "abbreviation": "pa ré pa",
+                "poids": 21
+            }
+        ]
+    },
+    {
+        "name": "% résistance neutre",
+        "poids": 1,
+        "max": 16,
+        "upgrades": [
+            {
+                "abbreviation": "ré per neutre",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "% résistance terre",
+        "poids": 1,
+        "max": 16,
+        "upgrades": [
+            {
+                "abbreviation": "ré per terre",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "% résistance feu",
+        "poids": 1,
+        "max": 16,
+        "upgrades": [
+            {
+                "abbreviation": "ré per feu",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "% résistance air",
+        "poids": 1,
+        "max": 16,
+        "upgrades": [
+            {
+                "abbreviation": "ré per air",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "% résistance eau",
+        "poids": 1,
+        "max": 16,
+        "upgrades": [
+            {
+                "abbreviation": "ré per eau",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "dommage neutre",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do neutre",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do neutre",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage terre",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do terre",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do terre",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage feu",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do feu",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do feu",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage air",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do air",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do air",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage eau",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do eau",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do eau",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage critique",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do cri",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do cri",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage de poussé",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do pou",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do pou",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "dommage piège",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "do pi",
+                "poids": 5
+            },
+            {
+                "abbreviation": "pa do pi",
+                "poids": 15
+            }
+        ]
+    },
+    {
+        "name": "chasse",
+        "poids": 1,
+        "max": 20,
+        "upgrades": [
+            {
+                "abbreviation": "chasse",
+                "poids": 5
+            }
+        ]
+    },
+    {
+        "name": "tacle",
+        "poids": 1,
+        "max": 25,
+        "upgrades": [
+            {
+                "abbreviation": "tac",
+                "poids": 4
+            },
+            {
+                "abbreviation": "pa tac",
+                "poids": 12
+            }
+        ]
+    },
+    {
+        "name": "fuite",
+        "poids": 1,
+        "max": 25,
+        "upgrades": [
+            {
+                "abbreviation": "fui",
+                "poids": 4
+            },
+            {
+                "abbreviation": "pa fui",
+                "poids": 12
+            }
+        ]
+    },
+    {
+        "name": "prospection",
+        "poids": 1,
+        "max": 33,
+        "upgrades": [
+            {
+                "abbreviation": "prosp",
+                "poids": 3
+            },
+            {
+                "abbreviation": "pa prosp",
+                "poids": 9
+            }
+        ]
+    },
+    {
+        "name": "sagesse",
+        "poids": 1,
+        "max": 33,
+        "upgrades": [
+            {
+                "abbreviation": "sa",
+                "poids": 3
+            },
+            {
+                "abbreviation": "pa sa",
+                "poids": 9
+            },
+            {
+                "abbreviation": "ra sa",
+                "poids": 30
+            }
+        ]
+    },
+    {
+        "name": "puissance piège",
+        "poids": 1,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "pi per",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa pi per",
+                "poids": 6
+            },
+            {
+                "abbreviation": "ra pi per",
+                "poids": 20
+            }
+        ]
+    },
+    {
+        "name": "puissance",
+        "poids": 1,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "pui",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa pui",
+                "poids": 6
+            },
+            {
+                "abbreviation": "ra pui",
+                "poids": 20
+            }
+        ]
+    },
+    {
+        "name": "résistance fixe neutre",
+        "poids": 2,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré neutre",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré neutre",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance fixe terre",
+        "poids": 2,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré terre",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré terre",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance fixe feu",
+        "poids": 2,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré feu",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré feu",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance fixe air",
+        "poids": 2,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré air",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré air",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance fixe eau",
+        "poids": 2,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré eau",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré eau",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance critique",
+        "poids": 1,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré cri",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré cri",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "résistance poussé",
+        "poids": 1,
+        "max": 50,
+        "upgrades": [
+            {
+                "abbreviation": "ré neutre",
+                "poids": 2
+            },
+            {
+                "abbreviation": "pa ré neutre",
+                "poids": 6
+            }
+        ]
+    },
+    {
+        "name": "force",
+        "poids": 1,
+        "max": 101,
+        "upgrades": [
+            {
+                "abbreviation": "fo",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa fo",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra fo",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "intelligence",
+        "poids": 1,
+        "max": 101,
+        "upgrades": [
+            {
+                "abbreviation": "ine",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa ine",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra ine",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "agilité",
+        "poids": 1,
+        "max": 101,
+        "upgrades": [
+            {
+                "abbreviation": "age",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa age",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra age",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "chance",
+        "poids": 1,
+        "max": 101,
+        "upgrades": [
+            {
+                "abbreviation": "cha",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa cha",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra cha",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "pods",
+        "poids": 0.25,
+        "max": 404,
+        "upgrades": [
+            {
+                "abbreviation": "pod",
+                "poids": 2.5
+            },
+            {
+                "abbreviation": "pa pod",
+                "poids": 7.5
+            },
+            {
+                "abbreviation": "ra pod",
+                "poids": 25
+            }
+        ]
+    },
+    {
+        "name": "vitalité",
+        "poids": 0.2,
+        "max": 505,
+        "upgrades": [
+            {
+                "abbreviation": "vi",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa vi",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra vi",
+                "poids": 10
+            }
+        ]
+    },
+    {
+        "name": "initiative",
+        "poids": 0.1,
+        "max": 1010,
+        "upgrades": [
+            {
+                "abbreviation": "ini",
+                "poids": 1
+            },
+            {
+                "abbreviation": "pa ini",
+                "poids": 3
+            },
+            {
+                "abbreviation": "ra ini",
+                "poids": 10
+            }
+        ]
+    }
+]
